@@ -14,7 +14,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
         {children}
       </div>
       {/* <Footer /> */}
-      <MobileBottomNav />
+      <div className="max-w-5xl mx-auto">
+        <MobileBottomNav />
+      </div>
     </div>
   );
 };

@@ -39,9 +39,9 @@ export default function BannerSlider() {
   const error = null;
   const settings = {
     sliderImages: [
-      "/banner1.jpg",
-      "/banner2.jpg",
-      "/banner3.jpg"
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg"
     ]
   };
 
@@ -132,7 +132,7 @@ export default function BannerSlider() {
 
   return (
     <div
-      className="relative mx-auto w-full lg:w-[1000px] h-44 sm:h-56 md:h-64 lg:h-80 xl:h-96 rounded-lg overflow-hidden border"
+      className="relative w-full min-w-0 max-w-full h-44 sm:h-56 md:h-64 lg:h-80 xl:h-96 rounded-lg overflow-hidden border"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >

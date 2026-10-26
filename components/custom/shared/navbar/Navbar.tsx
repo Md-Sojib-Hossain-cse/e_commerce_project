@@ -56,7 +56,148 @@ export default function Navbar() {
 
   // Transform categories for UI
   const categories = useMemo(() => {
-    const raw: any[] =  [];
+    const raw: any[] =  
+[
+  {
+    "_id": "cat-001",
+    "id": "cat-001",
+    "name": "Men's Fashion",
+    "slug": "mens-fashion",
+    "subCategories": [
+      "T-Shirts",
+      "Shirts",
+      "Pants & Trousers",
+      "Jeans",
+      "Panjabi",
+      "Jackets & Hoodies",
+      "Men's Shoes",
+      "Watches"
+    ]
+  },
+  {
+    "_id": "cat-002",
+    "id": "cat-002",
+    "name": "Women's Fashion",
+    "slug": "womens-fashion",
+    "subCategories": [
+      "Sarees",
+      "Salwar Kameez",
+      "Kurtis",
+      "Tops & Blouses",
+      "Dresses",
+      "Jeans & Trousers",
+      "Women's Shoes",
+      "Handbags"
+    ]
+  },
+  {
+    "_id": "cat-003",
+    "id": "cat-003",
+    "name": "Kids' Fashion",
+    "slug": "kids-fashion",
+    "subCategories": [
+      "Boys' Clothing",
+      "Girls' Clothing",
+      "Baby Clothing",
+      "Kids' Shoes",
+      "School Uniforms"
+    ]
+  },
+  {
+    "_id": "cat-004",
+    "id": "cat-004",
+    "name": "Electronics",
+    "slug": "electronics",
+    "subCategories": [
+      "Mobile Phones",
+      "Headphones & Earphones",
+      "Chargers & Cables",
+      "Power Banks",
+      "Smart Watches",
+      "Computer Accessories"
+    ]
+  },
+  {
+    "_id": "cat-005",
+    "id": "cat-005",
+    "name": "Beauty & Personal Care",
+    "slug": "beauty-personal-care",
+    "subCategories": [
+      "Skin Care",
+      "Hair Care",
+      "Makeup",
+      "Perfumes",
+      "Personal Hygiene"
+    ]
+  },
+  {
+    "_id": "cat-006",
+    "id": "cat-006",
+    "name": "Shoes & Footwear",
+    "slug": "shoes-footwear",
+    "subCategories": [
+      "Sneakers",
+      "Formal Shoes",
+      "Sandals & Slippers",
+      "Sports Shoes",
+      "Boots"
+    ]
+  },
+  {
+    "_id": "cat-007",
+    "id": "cat-007",
+    "name": "Bags & Accessories",
+    "slug": "bags-accessories",
+    "subCategories": [
+      "Backpacks",
+      "Handbags",
+      "Wallets",
+      "Belts",
+      "Sunglasses",
+      "Caps & Hats"
+    ]
+  },
+  {
+    "_id": "cat-008",
+    "id": "cat-008",
+    "name": "Home & Living",
+    "slug": "home-living",
+    "subCategories": [
+      "Home Decor",
+      "Bed Sheets",
+      "Kitchen Accessories",
+      "Storage & Organization",
+      "Lighting"
+    ]
+  },
+  {
+    "_id": "cat-009",
+    "id": "cat-009",
+    "name": "Sports & Outdoors",
+    "slug": "sports-outdoors",
+    "subCategories": [
+      "Sportswear",
+      "Gym Accessories",
+      "Fitness Equipment",
+      "Outdoor Accessories"
+    ]
+  },
+  {
+    "_id": "cat-010",
+    "id": "cat-010",
+    "name": "Watches & Jewelry",
+    "slug": "watches-jewelry",
+    "subCategories": [
+      "Men's Watches",
+      "Women's Watches",
+      "Necklaces",
+      "Bracelets",
+      "Rings",
+      "Earrings"
+    ]
+  }
+]
+;
 
     return raw.map((c) => {
       const id = String((c._id ?? c.id ?? c.slug ?? "") || "");
@@ -86,10 +227,10 @@ export default function Navbar() {
     <>
       {/* ===== Desktop/Large Screen ===== */}
       <div className="hidden lg:block w-full bg-white border-b border-neutral shadow-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 w-full md:px-6 lg:px-36">
+        <div className="max-w-7xl mx-auto px-2 md:px-4 lg:px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo + Title */}
-            <div className="flex items-center space-x-3 shrink-0">
+            <div className="flex items-center space-x-3 shrink-0 pl-2 md:pl-4 lg:pl-8">
               <Link
                 href="/"
                 className="flex items-center"
@@ -263,7 +404,7 @@ export default function Navbar() {
               <nav className="space-y-2">
                 <Link
                   href="/product-listing"
-                  className="block py-2 px-3 hover:bg-accent/10 rounded transition-colors text-primary-background bg-primary-foreground lg:bg-primary-background lg:text-primary-foreground"
+                  className="block py-2 px-3 bg-primary-foreground hover:bg-accent/10 rounded transition-colors text-primary-background bg-primary-foreground lg:bg-primary-background lg:text-primary-foreground"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   All Categories
@@ -271,10 +412,10 @@ export default function Navbar() {
 
                 {categories.map((category) => (
                   <div key={category.id}>
-                    <div className="flex items-center justify-between py-2 px-3 hover:bg-accent/10 rounded transition-colors">
+                    <div className="flex items-center justify-between py-2 px-3 bg-primary-foreground hover:bg-accent/10 rounded transition-colors">
                       <Link
                         href={`/category?slug=${encodeURIComponent(category.slug ?? category.id)}`}
-                        className="flex-1 text-black"
+                        className="flex-1 text-primary-background bg-primary-foreground"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         {category.label}
@@ -286,9 +427,9 @@ export default function Navbar() {
                           aria-label={`Toggle ${category.label} subcategories`}
                         >
                           {expandedCategories.has(category.id) ? (
-                            <ChevronDown size={20} className="text-black" />
+                            <ChevronDown size={20} className="text-primary-background bg-primary-foreground" />
                           ) : (
-                            <ChevronRight size={20} className="text-black" />
+                            <ChevronRight size={20} className="text-primary-background bg-primary-foreground" />
                           )}
                         </button>
                       )}
@@ -299,7 +440,7 @@ export default function Navbar() {
                           <Link
                             key={`${subCat}-${index}`}
                             href={`/category?slug=${encodeURIComponent(category.slug ?? category.id)}&sub=${encodeURIComponent(String(subCat ?? ""))}`}
-                            className="block py-1.5 px-3 text-sm hover:bg-accent/10 rounded transition-colors text-black"
+                            className="block py-1.5 px-3 text-sm hover:bg-accent/10 rounded transition-colors text-primary-background bg-primary-foreground"
                             onClick={() => setIsMenuOpen(false)}
                           >
                             {subCat}

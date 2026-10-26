@@ -8,7 +8,7 @@ export default function HomepagePopup() {
     const settings = {
         enableHomepagePopup: true,
         popupDelay: 3000,
-        popupImage: "/about1.jpg",
+        popupImage: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
         popupTitle: "Welcome to Our Store!",
         popupDescription: "Check out our latest products and offers.",
     };
@@ -66,7 +66,7 @@ export default function HomepagePopup() {
           <p className="text-gray-600 mb-4">{settings.popupDescription}</p>
           <button
             onClick={handleClose}
-            className="w-full bg-orange-500 text-[#2e2e2e] py-2 px-4 rounded hover:bg-orange-600"
+            className="w-full bg-primary-background text-primary-foreground py-2 px-4 rounded hover:bg-priamry-background"
           >
             Got it!
           </button>

@@ -11,12 +11,12 @@ export default function FloatingEdgeBar() {
 
   return (
     <aside className="fixed right-0 top-1/2 -translate-y-1/2 hidden md:flex md:z-40">
-      <div className="bg-[#facf35] text-[#2e2e2e] shadow-lg border-l border-white/10 w-[110px] md:w-14">
+      <div className="bg-primary-background text-primary-foreground shadow-lg border-l border-white/10 w-[110px] md:w-14">
         <ul className="flex flex-col items-center justify-center divide-y divide-white/10">
           <li className="w-full relative">
             <Link
               href="/dashboard/checkout"
-              className="flex flex-col text-[#2e2e2e] items-center justify-center py-3 w-full"
+              className="flex flex-col text-primary-foreground items-center justify-center py-3 w-full"
               aria-label="Cart"
               title="Cart"
             >
