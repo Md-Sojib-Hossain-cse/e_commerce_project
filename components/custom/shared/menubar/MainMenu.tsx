@@ -4,8 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { ShoppingCart, LogOut } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function MainMenu() {
+
+  const pathname = usePathname();
 
     const currentUser ={
         id : 1,
@@ -32,19 +35,27 @@ export default function MainMenu() {
   };
 
   return (
-    <div className="relative hidden lg:block left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-[#facf35]">
+    <div className="relative hidden lg:block left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-primary-background text-primary-foreground">
       <div className="container mx-auto w-full px-3 md:px-6 lg:px-36">
-        <div className="flex items-center justify-between py-2 h-10">
+        <div className="flex items-center justify-between h-10">
           {/* Left menu */}
-          <nav className="flex items-center gap-5 text-sm text-[#2e2e2e] pl-6">
-            <Link href="/" className="hover:underline">Home</Link>
-            <Link href="/product-listing" className="hover:underline">Product</Link>
-            <Link href="/about" className="hover:underline">About</Link>
-            <Link href="/contact-us" className="hover:underline">Contact</Link>
-          </nav>
+          <div className="flex items-center gap-5 text-sm text-primary-foreground pl-6 py-2">
+            <Link href="/" className={pathname === "/" ? "underline" : "hover:underline"}>
+              Home
+            </Link>
+            <Link href="/product-listing" className={pathname === "/product-listing" ? "underline" : "hover:underline"}>
+              Product
+            </Link>
+            <Link href="/about" className={pathname === "/about" ? "underline" : "hover:underline"}>
+              About
+            </Link>
+            <Link href="/contact-us" className={pathname === "/contact-us" ? "underline" : "hover:underline"}>
+              Contact
+            </Link>
+          </div>
 
           {/* Right: Account + Cart */}
-          <div className="flex items-center gap-4 text-[#2e2e2e]">
+          <div className="flex items-center gap-4 text-primary-foreground">
             {!isLoggedIn ? (
               // 🔓 লগইন না থাকলে - Login/Register link
               <Link href="/auth/login" className="text-sm hover:underline">
@@ -64,8 +75,7 @@ export default function MainMenu() {
                       alt={displayName || "User avatar"}
                       width={28}
                       height={28}
-                      className="rounded-full object-cover border-2 border-white/30 group-hover:border-white/60 transition-colors"
-                      sizes="28px"
+                      className="w-7 h-7 rounded-full object-cover border-2 border-white/30 group-hover:border-white/60 transition-colors"
                       priority
                       onError={(e) => {
                         // যদি image load না হয়, তাহলে fallback হিসেবে avatar icon show করবে
@@ -99,7 +109,7 @@ export default function MainMenu() {
             >
               <ShoppingCart size={20} />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 h-5 min-w-5 px-1 rounded-full text-xs bg-orange-500 text-[#2e2e2e] flex items-center justify-center font-medium">
+                <span className="absolute -top-1 -right-1 h-5 min-w-5 px-1 rounded-full text-xs bg-primary-foreground text-primary-background flex items-center justify-center font-medium">
                   {cartCount > 99 ? '99+' : cartCount}
                 </span>
               )}

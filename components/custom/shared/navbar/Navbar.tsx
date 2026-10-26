@@ -9,7 +9,6 @@ import {
   Search,
   Headphones,
   ShoppingCart,
-  LogOut,
   User as UserIcon,
   ChevronDown,
   ChevronRight,
@@ -50,11 +49,7 @@ export default function Navbar() {
     logo: "https://res.cloudinary.com/dikjzg7df/image/upload/v1792817904/logo_puciyl.jpg",
   }
 
-  const cartItems = []; // Replace with actual cart items from your state or context
-
-  const isLoggedIn = false; // Replace with actual login state from your auth context or state
-
-  const isLogoutLoading = false; // Replace with actual logout loading state from your auth context or state
+  const cartItems = [{},{}]; // Replace with actual cart items from your state or context
 
 
 
@@ -85,9 +80,6 @@ export default function Navbar() {
       }
       return newSet;
     });
-  };
-
-  const handleLogout = async () => {
   };
 
   return (
@@ -135,7 +127,7 @@ export default function Navbar() {
             <div className="flex items-center gap-3 shrink-0">
               <Link
                 href="/contact-us"
-                className="inline-flex items-center text-accent gap-2 px-3 py-2 rounded-md border border-neutral hover:bg-secondary bg-primary"
+                className="inline-flex items-center text-accent gap-2 px-3 py-2 rounded-md border border-neutral hover:bg-primary-background hover:text-primary-foreground bg-primary"
                 aria-label="contact"
               >
                 <Headphones size={18} />
@@ -155,29 +147,17 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/dashboard/checkout"
-                className="relative inline-flex items-center justify-center h-10 w-10 rounded-md border border-neutral hover:bg-primary hover:text-secondary"
+                className="relative inline-flex items-center justify-center h-10 w-10 rounded-md border border-neutral hover:bg-primary-foreground hover:text-primary-background delay-0 transition-colors"
                 aria-label="cart"
               >
                 <ShoppingCart size={18} />
                 {isClient && cartItems.length > 0 && (
-                  <span className="absolute -top-2 -right-2 h-5 min-w-5 px-1 rounded-full text-xs bg-secondary text-accent flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 h-5 min-w-5 px-1 rounded-full text-xs bg-primary-foreground text-primary-background flex items-center justify-center">
                     {cartItems.length}
                   </span>
                 )}
               </Link>
 
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={handleLogout}
-                    aria-label="Logout"
-                    disabled={isLogoutLoading}
-                    className="inline-flex items-center gap-2 text-sm px-3 py-2 rounded-md border border-gray-200 hover:bg-gray-50 disabled:opacity-60"
-                  >
-                    <LogOut size={16} />
-                    {isLogoutLoading ? "Logging out..." : "Logout"}
-                  </button>
-                </div>
             </div>
           </div>
         </div>
@@ -243,26 +223,6 @@ export default function Navbar() {
                     </span>
                   )}
                 </Link>
-
-                {!isLoggedIn ? (
-                  <Link
-                    href="/auth/login"
-                    className="p-2 rounded-lg bg-primary-foreground text-primary-background hover:bg-accent/90 transition-colors"
-                    aria-label="Login/Register"
-                  >
-                    <UserIcon size={18} />
-                  </Link>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={handleLogout}
-                    aria-label="Logout"
-                    disabled={isLogoutLoading}
-                    className="p-2 rounded-lg bg-accent text-secondary hover:bg-accent/90 transition-colors disabled:opacity-60"
-                  >
-                    <LogOut size={18} />
-                  </button>
-                )}
               </div>
             </div>
           )}
