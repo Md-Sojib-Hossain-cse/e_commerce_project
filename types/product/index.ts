@@ -214,3 +214,26 @@ export function toUIList(list: readonly (IProduct | ProductData)[] | undefined):
   if (!Array.isArray(list)) return [];
   return list.map(toUIProduct);
 }
+
+export interface RemoteSubCategory {
+  _id?: string;
+  id?: string;
+  slug?: string;
+  name?: string;
+  label?: string;
+}
+
+export interface RemoteCategory {
+  _id?: string;
+  id?: string;
+  slug?: string;
+  name?: string;
+  label?: string;
+  image?: string;
+
+  icon?: {
+    url?: string;
+  };
+
+  subCategories?: RemoteSubCategory[];
+}

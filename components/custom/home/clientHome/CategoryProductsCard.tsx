@@ -15,7 +15,8 @@
 import Image from "next/image";
 import { useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import type { IProduct } from "@/types/product";
+import type { IProduct, RemoteCategory } from "@/types/product";
+import { Button } from "@/components/ui/button";
 
 /* ---------- safe access helpers (no any) ---------- */
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -108,22 +109,31 @@ function productImage(p: IProduct): string | undefined {
   if (image && isValidImageUrl(image)) return image;
   return undefined;
 }
+
 function productPriceText(p: IProduct): string | undefined {
   const info = getProp(p as unknown, "productInfo");
-  const sale = isRecord(info) ? getStr(info, "salePrice") : undefined;
-  const saleNum = sale ? Number(sale) : undefined;
-  const price = isRecord(info) ? getStr(info, "price") : undefined;
-  const priceNum = price ? Number(price) : undefined;
 
-  const num =
-    typeof saleNum === "number" && Number.isFinite(saleNum)
-      ? saleNum
-      : typeof priceNum === "number" && Number.isFinite(priceNum)
-      ? priceNum
-      : undefined;
+  if (!isRecord(info)) return undefined;
 
-  return typeof num === "number" ? `৳ ${Math.round(num)}` : undefined;
+  const salePrice = Number(info.salePrice);
+  const regularPrice = Number(info.price);
+
+  const price =
+    info.salePrice !== null &&
+    info.salePrice !== undefined &&
+    info.salePrice !== "" &&
+    Number.isFinite(salePrice) &&
+    salePrice > 0
+      ? salePrice
+      : Number.isFinite(regularPrice) && regularPrice > 0
+        ? regularPrice
+        : undefined;
+
+  return price !== undefined
+    ? `৳ ${Math.round(price).toLocaleString("en-BD")}`
+    : undefined;
 }
+
 
 /** প্রোডাক্টের ক্যাটাগরি টোকেন (ids/slugs/names) — lowercase string arrays */
 function productCategoryTokens(p: IProduct): { ids: string[]; slugs: string[]; names: string[] } {
@@ -507,6 +517,7 @@ export default function CategoryProductCards() {
         image: productImage(p),
         priceText: productPriceText(p),
       })),
+      
     [matched]
   );
 
@@ -527,34 +538,36 @@ export default function CategoryProductCards() {
             {items.map((it) => {
               const src = it.image && isValidImageUrl(it.image) ? it.image : "/placeholder.png";
               return (
-                <button
+                <div
                   key={it.id}
                   onClick={() => goDetails(it.id)}
                   className="group text-left"
                   aria-label={`View ${it.title}`}
                 >
-                  <div className="relative rounded-lg border bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <div className="relative rounded-lg border bg-white overflow-hidden shadow-xs hover:shadow-md transition-shadow hover:-top-1 hover:scale-[1.01]">
                     <div className="flex flex-col items-center justify-center p-4">
-                      <div className="relative w-full max-w-[320px] aspect-[4/3] grid place-items-center">
+                      <div className="relative w-full max-w-[320px] aspect-[4/3] grid place-items-center overflow-hidden">
                         <Image
                           src={src}
                           alt={it.title}
                           fill
-                          sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
-                          className="object-contain transition-transform duration-300 group-hover:scale-95"
+                          className="object-contain transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
-                      <p className="mt-3 text-center text-sm md:text-base font-medium text-gray-800 line-clamp-1">
+                      <div className="w-full">
+                        <p className="mt-3 text-sm md:text-base font-medium text-gray-800 line-clamp-1">
                         {it.title}
                       </p>
                       {it.priceText && (
-                        <p className="text-center text-sm text-orange-600 font-semibold">
+                        <p className="text-base text-primary-background font-bold pt-3">
                           {it.priceText}
                         </p>
                       )}
+                      <Button className={"w-full p-5 mt-3"}>Add to Cart</Button>
+                      </div>
                     </div>
                   </div>
-                </button>
+                </div>
               );
             })}
           </div>

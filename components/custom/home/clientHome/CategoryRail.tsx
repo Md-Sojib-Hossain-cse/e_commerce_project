@@ -171,18 +171,18 @@ const data : TCategory[] = [
   return (
     <section className="w-full">
       <div className="mb-2 flex items-center justify-between px-1">
-        <h3 className="font-semibold text-base md:text-lg text-secondary">Browse by Category</h3>
+        <h3 className="font-semibold text-base md:text-lg text-primary-background">Browse by Category</h3>
         <div className="hidden md:flex gap-2">
           <button 
             onClick={() => scrollBy(-240)} 
-            className="w-8 h-8 flex items-center justify-center rounded-full border border-neutral hover:bg-section transition-colors text-secondary"
+            className="w-8 h-8 flex items-center justify-center rounded-full border border-primary-background transition-colors text-primary-background active:scale-90 hover:scale-105"
             aria-label="Previous categories"
           >
             ‹
           </button>
           <button 
             onClick={() => scrollBy(240)} 
-            className="w-8 h-8 flex items-center justify-center rounded-full border border-neutral hover:bg-section transition-colors text-secondary"
+            className="w-8 h-8 flex items-center justify-center rounded-full border border-primary-background transition-colors text-primary-background active:scale-90 hover:scale-105"
             aria-label="Next categories"
           >
             ›
@@ -193,7 +193,7 @@ const data : TCategory[] = [
       <div ref={railRef} className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
         <button
           onClick={() => setCategory(undefined)}
-          className={`whitespace-nowrap px-3 py-2 rounded-full border border-neutral ${current ? "bg-accent text-secondary hover:bg-section" : "bg-secondary text-accent"}`}
+          className={`whitespace-nowrap px-3 py-2 rounded-full border border-neutral ${current ? "bg-accent text-primary-background hover:bg-section" : "bg-secondary text-primary-background"}`}
           aria-pressed={!current}
         >
           All
@@ -205,8 +205,8 @@ const data : TCategory[] = [
             onClick={() => setCategory(c)}
             className={`whitespace-nowrap px-3 py-2 rounded-full border border-neutral transition ${
               current && current === (c.slug ?? c.id)
-                ? "bg-primary text-secondary"
-                : "bg-accent text-secondary hover:bg-section"
+                ? "bg-primary-background text-primary-foreground"
+                : "bg-accent text-primary-background hover:bg-section"
             }`}
             aria-pressed={current === (c.slug ?? c.id)}
           >

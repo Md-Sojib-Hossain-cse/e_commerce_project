@@ -58,8 +58,6 @@ export default function ClientHome() {
     "salePrice": 10800
   }
 ]
-
-console.log(discounted)
     const discountLoading = false
     const discountError = false
 
@@ -463,7 +461,7 @@ console.log(discounted)
       <MainMenu />
 
       {/* Hero */}
-      <section className="max-w-7xl mx-auto w-full px-3 sm:px-4 lg:px-6 mt-4">
+      <section className="max-w-7xl mx-auto w-full px-2 sm:px-3 lg:px-4 mt-4">
         <div className="grid grid-cols-12 gap-3">
           <div className="col-span-12 md:col-span-3 lg:col-span-2">
             <CategorySidebar />
