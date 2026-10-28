@@ -528,7 +528,7 @@ export default function CategoryProductCards() {
 
   return (
     <section id="category-product-cards" className="w-full bg-white">
-      <div className="container mx-auto px-3 md:px-4 xl:px-6">
+      <div className="max-w-7xl w-full mx-auto px-3 md:px-4 xl:px-6">
         {showEmpty ? (
           <div className="py-6 text-center text-sm text-gray-600">
             There is no product in this Category.

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import type { IProduct } from "@/types/product";
+import { Button } from "@/components/ui/button";
 
 /** ---------- helpers (type-safe) ---------- */
 const toNum = (v: unknown): number => {
@@ -119,12 +120,12 @@ function mapFallbackFromData(list: IProduct[], limit: number): UIItem[] {
 
 /** ---------- static fallback ---------- */
 const STATIC_FALLBACK: UIItem[] = [
-  { id: "r1", title: "Portable Chair", image: "/new-arrival-1.png", price: 1500, rating: 4.5, reviews: 112, fallback: true },
-  { id: "r2", title: "Summer T-Shirt", image: "/new-arrival-2.png", price: 900, rating: 4.6, reviews: 86, fallback: true },
-  { id: "r3", title: "Casual Pants", image: "/new-arrival-3.png", price: 1450, rating: 4.4, reviews: 73, fallback: true },
-  { id: "r4", title: "Analog Watch", image: "/new-arrival-4.png", price: 2200, rating: 4.7, reviews: 128, fallback: true },
-  { id: "r5", title: "Smart Watch", image: "/man-model.png", price: 2800, rating: 4.5, reviews: 94, fallback: true },
-  { id: "r6", title: "Sneakers", image: "/mens.png", price: 3200, rating: 4.6, reviews: 77, fallback: true },
+  { id: "r1", title: "Portable Chair", image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg", price: 1500, rating: 4.5, reviews: 112, fallback: true },
+  { id: "r2", title: "Summer T-Shirt", image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg", price: 900, rating: 4.6, reviews: 86, fallback: true },
+  { id: "r3", title: "Casual Pants", image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg", price: 1450, rating: 4.4, reviews: 73, fallback: true },
+  { id: "r4", title: "Analog Watch", image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg", price: 2200, rating: 4.7, reviews: 128, fallback: true },
+  { id: "r5", title: "Smart Watch", image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg", price: 2800, rating: 4.5, reviews: 94, fallback: true },
+  { id: "r6", title: "Sneakers", image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg", price: 3200, rating: 4.6, reviews: 77, fallback: true },
 ];
 
 /** ---------- Component ---------- */
@@ -157,6 +158,9 @@ function TopReviewedImpl({
     return STATIC_FALLBACK.slice(0, limit);
   }, [data, limit]);
 
+
+  console.log(data)
+
   
 
   const isFallback = items.some((x) => x.fallback);
@@ -165,13 +169,10 @@ function TopReviewedImpl({
 
   return (
     <section className="w-full">
-      <div className="container mx-auto px-3 sm:px-4 lg:px-6">
+      <div className="max-w-7xl w-full mx-auto px-3 sm:px-4 lg:px-6">
         {/* Header */}
         <div className="mb-3 flex items-center justify-between">
-          <h3 className="text-lg font-bold sm:text-xl text-secondary">{title}</h3>
-          <Link href="/reviews" className="text-sm text-highlight hover:underline hover:text-primary">
-            View all
-          </Link>
+          <p className="text-xs bg-accent-background w-full p-2 rounded-md border border-blue-300 text-blue-800">Showing smart picks as we couldn&apos;t find rated products right now.</p>
         </div>
 
         {!loading && !error && isFallback && (
@@ -211,11 +212,11 @@ function TopReviewedImpl({
                 variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
                 whileHover={{ y: -3 }}
                 transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                className="group relative rounded-2xl border bg-white p-3 h-[320px] shadow-sm hover:shadow-md"
+                className="group relative rounded-2xl border bg-white p-2 h-[320px] shadow-sm hover:shadow-md hover:-translate-y-2 ease-in-out duration-300"
               >
                 {/* badge */}
                 {p.fallback && (
-                  <span className="absolute top-2 right-2 z-10 rounded-md px-2 py-0.5 text-[11px] font-semibold text-accent bg-secondary/90">
+                  <span className="absolute top-2 right-2 z-10 rounded-md px-2 py-0.5 text-[11px] font-semibold text-primary-background bg-primarry-foreground/90">
                     Smart picks
                   </span>
                 )}
@@ -223,15 +224,15 @@ function TopReviewedImpl({
                 <Link
                   href={`/product-details?id=${encodeURIComponent(p.id)}`}
                   aria-label={`View ${p.title}`}
-                  className="flex h-full flex-col"
+                  className="flex h-full flex-col rounded-md pt-2"
                 >
                   {/* image */}
-                  <div className="relative mx-auto grid h-32 w-full max-w-[180px] place-items-center sm:h-36 md:h-40">
+                  <div className="relative mx-auto grid h-32 w-full max-w-[180px] place-items-center sm:h-36 md:h-40 overflow-hidden">
                     <Image
-                      src={p.image || "/man-model.png"}
+                      src={p.image || "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg"}
                       alt={p.title}
                       fill
-                      className="object-contain rounded-md transition-transform duration-300 group-hover:scale-95"
+                      className="object-contain transition-transform duration-300 group-hover:scale-110"
                       sizes="(min-width:1024px) 16vw, (min-width:640px) 33vw, 50vw"
                       /** রিমোট ইউআরএল হলে unoptimized=true */
                       unoptimized={p.image?.startsWith("http")}
@@ -240,28 +241,30 @@ function TopReviewedImpl({
                   </div>
 
                   {/* title */}
-                  <div className="mt-3 line-clamp-2 h-[42px] text-center text-[13px] font-medium text-secondary sm:text-sm">
+                  <div>
+                    <div className="mt-3 line-clamp-2 text-[13px] font-medium text-primary-background sm:text-sm">
                     {p.title}
                   </div>
 
                   {/* rating */}
-                  <div className="mt-1 flex items-center justify-center gap-2">
+                  <div className="mt-1 flex items-center gap-2">
                     <Stars value={p.rating} />
-                    <span className="text-xs text-secondary/60">({p.reviews})</span>
+                    <span className="text-xs text-primary-background/60">({p.reviews})</span>
                   </div>
 
                   {/* price */}
-                  <div className="mt-2 flex min-h-[24px] items-center justify-center">
-                    <span className="text-sm font-semibold text-secondary sm:text-base">
+                  <div className="mt-2 flex min-h-[24px] items-center">
+                    <span className="text-sm font-semibold text-primary-background sm:text-base">
                       {formatBDT(p.price)}
                     </span>
                   </div>
 
                   {/* CTA */}
-                  <div className="mt-auto">
-                    <span className="inline-flex w-full items-center justify-center h-9 rounded-md text-highlight text-sm font-bold hover:text-primary transition-colors">
+                  <div className="mt-auto w-full">
+                    <Button className="inline-flex w-full items-center justify-center h-9 rounded-md text-primary-foreground text-sm font-bold transition-colors">
                       View details
-                    </span>
+                    </Button>
+                  </div>
                   </div>
                 </Link>
               </motion.div>

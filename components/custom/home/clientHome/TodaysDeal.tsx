@@ -61,42 +61,42 @@ export const FALLBACK: RemoteProduct[] = [
   {
     _id: "5f1",
     name: "Portable Chair",
-    image: "/new-arrival-1.png",
+    image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
     mrp: 1800,
     offerPrice: 1500,
   },
   {
     _id: "6f2",
     name: "Summer T-Shirt",
-    image: "/new-arrival-2.png",
+    image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
     mrp: 900,
     offerPrice: 700,
   },
   {
     _id: "7f3",
     name: "Casual Pants",
-    image: "/new-arrival-3.png",
+    image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
     mrp: 1450,
     offerPrice: 1200,
   },
   {
     _id: "8f4",
     name: "Analog Watch",
-    image: "/new-arrival-4.png",
+    image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
     mrp: 2200,
     offerPrice: 1800,
   },
   {
     _id: "9f5",
     name: "Smart Watch",
-    image: "/man-model.png",
+    image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
     mrp: 2800,
     offerPrice: 2400,
   },
   {
     _id: "10f6",
     name: "Sneakers",
-    image: "/mens.png",
+    image: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
     mrp: 3200,
     offerPrice: 2700,
   },
@@ -144,7 +144,7 @@ const pickImage = (p: RemoteProduct | IProduct): string => {
     ) {
       return p.gallery[0];
     }
-    return "/mens.png";
+    return "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg";
   }
 
   // For RemoteProduct structure
@@ -180,7 +180,7 @@ const pickImage = (p: RemoteProduct | IProduct): string => {
     ? asStr.startsWith("/") || asStr.startsWith("http")
       ? asStr
       : `/${asStr}`
-    : "/mens.png";
+    : "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg";
 };
 
 // Picks MRP (regular price) from multiple possible fields
@@ -250,7 +250,7 @@ const discountPct = (mrp?: number | null, sale?: number | null): number => {
   return Math.max(1, Math.min(90, pct));
 };
 
-export default function ProductSixGrid({
+export default function TodaysDeal({
   title = "Featured Deals",
   fallback = FALLBACK,
 }: Props) {
@@ -260,9 +260,9 @@ export default function ProductSixGrid({
     "id": "prod-001",
     "slug": "portable-chair",
     "name": "Portable Folding Chair",
-    "featuredImg": "/new-arrival-1.png",
-    "image": "/new-arrival-1.png",
-    "gallery": ["/new-arrival-1.png"],
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "gallery": ["https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg"],
     "price": {
       "regular": 1800,
       "sale": 1500
@@ -275,9 +275,9 @@ export default function ProductSixGrid({
     "id": "prod-002",
     "slug": "summer-t-shirt",
     "name": "Men's Summer T-Shirt",
-    "featuredImg": "/new-arrival-2.png",
-    "image": "/new-arrival-2.png",
-    "gallery": ["/new-arrival-2.png"],
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "gallery": ["https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg"],
     "price": {
       "regular": 900,
       "sale": 700
@@ -290,9 +290,9 @@ export default function ProductSixGrid({
     "id": "prod-003",
     "slug": "casual-pants",
     "name": "Casual Cotton Pants",
-    "featuredImg": "/new-arrival-3.png",
-    "image": "/new-arrival-3.png",
-    "gallery": ["/new-arrival-3.png"],
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "gallery": ["https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg"],
     "price": {
       "regular": 1450,
       "sale": 1200
@@ -305,9 +305,9 @@ export default function ProductSixGrid({
     "id": "prod-004",
     "slug": "analog-watch",
     "name": "Classic Analog Watch",
-    "featuredImg": "/new-arrival-4.png",
-    "image": "/new-arrival-4.png",
-    "gallery": ["/new-arrival-4.png"],
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "gallery": ["https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg"],
     "price": {
       "regular": 2200,
       "sale": 1800
@@ -320,9 +320,9 @@ export default function ProductSixGrid({
     "id": "prod-005",
     "slug": "smart-watch",
     "name": "Bluetooth Smart Watch",
-    "featuredImg": "/man-model.png",
-    "image": "/man-model.png",
-    "gallery": ["/man-model.png"],
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "gallery": ["https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg"],
     "price": {
       "regular": 2800,
       "sale": 2400
@@ -335,9 +335,9 @@ export default function ProductSixGrid({
     "id": "prod-006",
     "slug": "casual-sneakers",
     "name": "Casual Sneakers",
-    "featuredImg": "/mens.png",
-    "image": "/mens.png",
-    "gallery": ["/mens.png"],
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+    "gallery": ["https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg"],
     "price": {
       "regular": 3200,
       "sale": 2700
@@ -364,13 +364,13 @@ export default function ProductSixGrid({
 
   return (
     <section className="w-full bg-white">
-      <div className="container mx-auto px-3 sm:px-4 lg:px-6">
-        <h2 className="text-lg sm:text-xl font-semibold text-secondary mb-3">
+      <div className="max-w-7xl w-full mx-auto px-3 sm:px-4 lg:px-6">
+        {/* <h2 className="text-lg sm:text-xl font-semibold text-primary-background mb-3">
           {title}
-        </h2>
+        </h2> */}
 
         {isLoading ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 md:gap-4">
             {Array.from({ length: 6 }).map((_, i) => (
               <div
                 key={i}
@@ -383,7 +383,7 @@ export default function ProductSixGrid({
           <p className="text-secondary/60">Failed to load products</p>
         </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
             {items.map((p) => {
               const sale = p.sale ?? (p.mrp ? Math.round(p.mrp * 0.7) : 0);
               const mrp = p.mrp ?? undefined;
@@ -393,42 +393,41 @@ export default function ProductSixGrid({
                 <Link
                   key={p.id}
                   href={`/product-details?id=${encodeURIComponent(p.id)}`}
-                  className="group relative rounded-lg border bg-white overflow-hidden p-3 flex flex-col h-[320px] hover:shadow-md transition-shadow duration-300"
+                  className="group relative rounded-lg border bg-white overflow-hidden p-3 flex flex-col hover:shadow-md transition-all duration-500 ease-in-out hover:-translate-y-2"
                   aria-label={`View details for ${p.title}`}
                 >
-                  <span className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-md text-[11px] font-semibold  bg-red-500 text-white">
+                  <span className="absolute top-6 right-2 z-10 px-2 py-0.5 rounded-md text-[11px] font-semibold  bg-red-500 text-white">
                     {pct}%
                   </span>
 
-                  <div className="relative mx-auto w-full max-w-[180px] h-28 sm:h-32 md:h-36 grid place-items-center">
+                  <div className="relative mx-auto w-full max-w-[180px] h-28 sm:h-32 md:h-36 grid place-items-center overflow-hidden">
                     <Image
                       src={p.image || "/mens.png"}
                       alt={p.title}
                       fill
-                      sizes="(min-width:1280px) 16vw, (min-width:1024px) 20vw, (min-width:640px) 33vw, 50vw"
-                      className="object-contain transition-transform duration-300 group-hover:scale-95"
+                      className="object-contain transition-transform duration-300 group-hover:scale-110"
                       unoptimized={p.image.startsWith("http")}
                     />
                   </div>
 
-                  <div className="mt-3 text-center text-[13px] sm:text-sm font-medium text-secondary min-h-[40px]">
+                  <div className="mt-2 text-[13px] sm:text-sm text-primary-background min-h-6">
                     {p.title}
                   </div>
 
-                  <div className="mt-2 flex items-center justify-center gap-2 min-h-[24px]">
+                  <div className="mt-2 flex items-center gap-2">
                     {typeof mrp === "number" ? (
-                      <span className="text-xs sm:text-sm text-secondary/40 line-through decoration-red-500">
+                      <span className="text-xs sm:text-sm text-primary-background/40 line-through decoration-red-500">
                         {formatBDT(mrp)}
                       </span>
                     ) : null}
-                    <span className="text-sm sm:text-base font-semibold text-secondary">
+                    <span className="text-sm sm:text-base font-semibold text-primary-background">
                       {formatBDT(sale || mrp || 0)}
                     </span>
                   </div>
 
-                  <div className="mt-auto">
-                    <button className="inline-flex w-full items-center justify-center h-9 rounded-md text-highlight text-sm font-bold hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-                      Buy now
+                  <div className="mt-3">
+                    <button className="inline-flex w-full items-center justify-center h-9 rounded-md text-primary-foreground bg-primary-background text-sm font-bold  hover:text-primary-background hover:bg-primary-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary trainsition-colors duration-300">
+                      Add to Cart
                     </button>
                   </div>
                 </Link>

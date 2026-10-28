@@ -230,9 +230,9 @@ export default function Discount({
   if (loading) {
     return (
       <section className="w-full py-12">
-        <div className="mb-6 flex items-center justify-between">
+        {/* <div className="mb-6 flex items-center justify-between">
           <h2 className="text-2xl font-bold md:text-3xl text-primary-background">{title}</h2>
-        </div>
+        </div> */}
         <div className="grid grid-cols-2 gap-4 px-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-6">
           {Array.from({ length: limit }).map((_, i) => (
             <div key={i} className="h-[320px] w-full rounded-2xl bg-gray-100 animate-pulse" />
@@ -245,12 +245,11 @@ export default function Discount({
   // Show only actual data, no fallback
   const dataset = items;
 
-  console.log(dataset)
 
   return (
     <section className="w-full pb-6 pt-2">
-      <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold md:text-3xl text-primary-background">{title}</h2>
+      {/* <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-bold md:text-3xl text-primary-background">{title}</h2> */}
         {/* <Button
           asChild
           variant="outline"
@@ -260,7 +259,7 @@ export default function Discount({
             View All <ChevronRight className="ml-1 inline h-4 w-4 bg-primary-background text-primary-foreground" />
           </Link>
         </Button> */}
-      </div>
+      {/* </div> */}
 
       {dataset.length === 0 ? (
         <div className="text-center py-12">
@@ -292,7 +291,7 @@ export default function Discount({
                     />
                   </div>
 
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h3 className="line-clamp-1 text-xs md:text-base text-primary-background">
                       {p.name || p.description.name}
                     </h3>
@@ -314,7 +313,7 @@ export default function Discount({
                       </div>
                     )}
                   </div>
-                  <div className="mt-3">
+                  <div className="mt-auto">
                     <Button className={"p-5 w-full rounded-md"}>Add to Cart</Button>
                   </div>
 

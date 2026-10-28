@@ -11,7 +11,9 @@ import CategoryProductCards from "./CategoryProductsCard";
 import TopReviewed from "./TopReviewed";
 import MobileBottomNav from "../../shared/navbar/MobileBottomNav";
 import Discount from "./Discount";
-import ProductSixGrid from "./ProductSixGrid";
+import TodaysDeal from "./TodaysDeal";
+import WhyChooseDressen from "./WhyChooseDressen";
+import DeliveryAndSizeChart from "./DeliveryAndSizeChart";
 
 export default function ClientHome() {
   const discounted = [
@@ -66,12 +68,12 @@ export default function ClientHome() {
   {
     "_id": "prod_001",
     "name": "Premium Cotton T-Shirt",
-    "image": "/new-arrival-1.png",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "shopId": "shop_001",
-    "featuredImg": "/new-arrival-1.png",
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "gallery": [
-      "/new-arrival-1.png",
-      "/mens.png"
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg"
     ],
     "brandAndCategories": {
       "brand": {
@@ -132,11 +134,11 @@ export default function ClientHome() {
   {
     "_id": "prod_002",
     "name": "Classic Analog Watch",
-    "image": "/new-arrival-4.png",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "shopId": "shop_001",
-    "featuredImg": "/new-arrival-4.png",
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "gallery": [
-      "/new-arrival-4.png"
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg"
     ],
     "brandAndCategories": {
       "brand": "TimeCraft",
@@ -195,11 +197,11 @@ export default function ClientHome() {
   {
     "_id": "prod_003",
     "name": "Smart Watch Pro",
-    "image": "/man-model.png",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "shopId": "shop_002",
-    "featuredImg": "/man-model.png",
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "gallery": [
-      "/man-model.png"
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg"
     ],
     "brandAndCategories": {
       "brand": {
@@ -260,11 +262,11 @@ export default function ClientHome() {
   {
     "_id": "prod_004",
     "name": "Everyday Sneakers",
-    "image": "/mens.png",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "shopId": "shop_001",
-    "featuredImg": "/mens.png",
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "gallery": [
-      "/mens.png"
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg"
     ],
     "brandAndCategories": {
       "brand": {
@@ -325,11 +327,11 @@ export default function ClientHome() {
   {
     "_id": "prod_005",
     "name": "Casual Slim Fit Pants",
-    "image": "/new-arrival-3.png",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "shopId": "shop_001",
-    "featuredImg": "/new-arrival-3.png",
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "gallery": [
-      "/new-arrival-3.png"
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg"
     ],
     "brandAndCategories": {
       "brand": "Urban Style",
@@ -388,11 +390,11 @@ export default function ClientHome() {
   {
     "_id": "prod_006",
     "name": "Portable Folding Chair",
-    "image": "/new-arrival-1.png",
+    "image": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "shopId": "shop_002",
-    "featuredImg": "/new-arrival-1.png",
+    "featuredImg": "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
     "gallery": [
-      "/new-arrival-1.png"
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg"
     ],
     "brandAndCategories": {
       "brand": {
@@ -511,7 +513,7 @@ export default function ClientHome() {
           right={{ label: "More...", href: "/deals" }}
         />
         <div className="mt-3">
-          <ProductSixGrid title="Today's Deal" />
+          <TodaysDeal title="Today's Deal" />
         </div>
       </section>
 
@@ -530,6 +532,12 @@ export default function ClientHome() {
       limit={6}
     />
   </div>
+</section>
+<section className="mt-6">
+  <WhyChooseDressen/>
+</section>
+<section className="my-6">
+  <DeliveryAndSizeChart/>
 </section>
 
       <MobileBottomNav />
