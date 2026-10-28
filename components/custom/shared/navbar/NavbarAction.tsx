@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { ShoppingCart, Search, User, LayoutDashboard, Heart } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ShoppingCart, Search, Heart } from "lucide-react";
 import { useState } from "react";
 
 const NavbarActions = () => {

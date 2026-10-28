@@ -43,8 +43,8 @@ export default function MainMenu() {
             <Link href="/" className={pathname === "/" ? "underline" : "hover:underline"}>
               Home
             </Link>
-            <Link href="/product-listing" className={pathname === "/product-listing" ? "underline" : "hover:underline"}>
-              Product
+            <Link href="/shop" className={pathname === "/shop" ? "underline" : "hover:underline"}>
+              Shop
             </Link>
             <Link href="/about" className={pathname === "/about" ? "underline" : "hover:underline"}>
               About

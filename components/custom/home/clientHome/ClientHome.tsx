@@ -1,6 +1,6 @@
 "use client";
 
-import MainMenu from "../../shared/menubar/MainMenu";
+import MainMenu from "../../shared/mainMenu/MainMenu";
 import CategorySidebar from "./CategorySidebar";
 import FloatingEdgeBar from "../../shared/floatingEdgeBar/FloatingEdgeBar";
 import HomepagePopup from "./HomePagePopup";
@@ -460,7 +460,6 @@ export default function ClientHome() {
  return (
     <main className="bg-white w-full">
       <HomepagePopup />
-      <MainMenu />
 
       {/* Hero */}
       <section className="max-w-7xl mx-auto w-full px-2 sm:px-3 lg:px-4 mt-4">
