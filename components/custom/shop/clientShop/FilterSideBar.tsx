@@ -1,5 +1,6 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
 import {
   demoCategoryData,
   demoColorData,
@@ -7,9 +8,14 @@ import {
   demoSizeData,
   demoTagData,
 } from "@/data/demoData"
+import { X } from "lucide-react"
 import { useState } from "react"
 
-export function FilterSideBar() {
+interface IProps {
+  setShowSidebar: (show: boolean) => void
+}
+
+export function FilterSideBar(props: IProps) {
   const [showAllCategory, setShowAllCategory] = useState(false)
   const [showAllPriceRanges, setShowAllPriceRanges] = useState(false)
   const [showAllColors, setShowAllColors] = useState(false)
@@ -29,8 +35,16 @@ export function FilterSideBar() {
   const demoTags = showAllTags ? demoTagData : demoTagData.slice(0, 3)
 
   return (
-    <div className="sticky left-0 h-dvh min-h-full w-full [scrollbar-width:none] overflow-scroll rounded-md bg-white px-2 py-4 shadow-sm md:px-4 md:py-6 [&::-webkit-scrollbar]:hidden">
-      <h3 className="text-lg font-semibold">Filters</h3>
+    <div className="[scrollbar-none] sticky left-0 h-dvh min-h-full w-full overflow-scroll bg-white px-2 py-4 shadow-sm md:rounded-r-md md:px-4 md:py-6 [&::-webkit-scrollbar]:hidden">
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-semibold">Filters</h3>
+        <Button
+          onClick={() => props.setShowSidebar(false)}
+          className="bg-transparent text-primary-background"
+        >
+          <X />
+        </Button>
+      </div>
       <div className="mt-3">
         <h4 className="mb-3 text-sm font-medium">Category</h4>
 

@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { IProduct } from "@/types/product"
 import { ShoppingCart } from "lucide-react"
 import Image from "next/image"
@@ -7,13 +6,6 @@ import Link from "next/link"
 interface ShopProductCardProps {
   productData: IProduct
 }
-
-// const formatBDT = (amount: number) =>
-//   new Intl.NumberFormat("en-BD", {
-//     style: "currency",
-//     currency: "BDT",
-//     maximumFractionDigits: 0,
-//   }).format(amount)
 
 const ShopProductCard = ({ productData }: ShopProductCardProps) => {
   const pct = 15
@@ -29,7 +21,7 @@ const ShopProductCard = ({ productData }: ShopProductCardProps) => {
 
       <Link
         href={`/product-details?id=${encodeURIComponent(productData._id ?? "")}`}
-        className="flex flex-1 flex-col"
+        className="bottom-0 flex flex-1 shrink-0 flex-col"
         aria-label={`View details for ${productData.name}`}
       >
         <div className="relative mx-auto grid h-28 w-full max-w-45 place-items-center overflow-hidden sm:h-32 md:h-36">
@@ -44,16 +36,18 @@ const ShopProductCard = ({ productData }: ShopProductCardProps) => {
 
         <div className="space-y-2">
           <h5 className="mt-2 min-h-6 text-[15px] font-bold text-primary-background">
-            {productData.name.length > 20
-              ? `${productData.name.slice(0, 20)}...`
+            {(productData?.name as string).length > 20
+              ? `${(productData.name as string).slice(0, 20)}...`
               : productData.name}
           </h5>
           <p className="text-xs text-primary-background/40">
-            {productData.brandAndCategories.brand.name}
+            {typeof productData.brandAndCategories.brand === "object"
+              ? productData.brandAndCategories.brand.name
+              : productData.brandAndCategories.brand || "N/A"}
           </p>
         </div>
 
-        <div className="mt-2 flex items-center justify-between gap-2">
+        <div className="mt-auto flex items-center justify-between gap-2">
           <div className="mt-2 flex items-center gap-2">
             <span className="text-md font-semibold">
               ৳
@@ -68,18 +62,6 @@ const ShopProductCard = ({ productData }: ShopProductCardProps) => {
           <ShoppingCart className="h-8 w-8 scale-95 rounded-md bg-primary-background p-2 text-base text-primary-foreground transition-colors duration-300 selection:scale-110 hover:bg-primary-foreground hover:text-primary-background" />
         </div>
       </Link>
-
-      {/* <div className="mt-3">
-        <button
-          type="button"
-          onClick={() => {
-            console.log("Add to cart:", productData._id)
-          }}
-          className="inline-flex h-9 w-full items-center justify-center rounded-md bg-primary-background text-sm font-bold text-primary-foreground transition-colors duration-300 hover:bg-primary-foreground hover:text-primary-background focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
-        >
-          Add to Cart
-        </button>
-      </div> */}
     </div>
   )
 }
