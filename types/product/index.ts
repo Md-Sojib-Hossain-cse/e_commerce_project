@@ -37,14 +37,14 @@ export type TagShape = {
 
 export interface IProduct {
   _id: string
-  name?: string
+  name: string
   image?: string
   price?: number
   shopId: string
   featuredImg: string
   gallery: string[]
   brandAndCategories: {
-    brand: string | { name: string } // Both string and object supported
+    brand: { name: string } // Both string and object supported
     categories: Array<{ name: string }>
     tags: Array<{ name: string }>
   }

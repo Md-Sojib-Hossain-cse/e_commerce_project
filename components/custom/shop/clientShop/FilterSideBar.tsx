@@ -15,7 +15,7 @@ export function FilterSideBar() {
   const [showAllColors, setShowAllColors] = useState(false)
   const [showAllSizes, setShowAllSizes] = useState(false)
   const [showAllTags, setShowAllTags] = useState(false)
-  const [selectedCategoryIds, showSelectedCategoryIds] = useState([])
+
   const demoPrices = showAllPriceRanges
     ? demoPriceRanges
     : demoPriceRanges.slice(0, 3)
@@ -28,10 +28,8 @@ export function FilterSideBar() {
   const demoSizes = showAllSizes ? demoSizeData : demoSizeData.slice(0, 3)
   const demoTags = showAllTags ? demoTagData : demoTagData.slice(0, 3)
 
-  console.log(demoColors[0].hex)
-
   return (
-    <div className="sticky left-0 min-h-full w-full rounded-md bg-white px-2 py-4 shadow-sm md:px-4 md:py-6">
+    <div className="sticky left-0 h-dvh min-h-full w-full [scrollbar-width:none] overflow-scroll rounded-md bg-white px-2 py-4 shadow-sm md:px-4 md:py-6 [&::-webkit-scrollbar]:hidden">
       <h3 className="text-lg font-semibold">Filters</h3>
       <div className="mt-3">
         <h4 className="mb-3 text-sm font-medium">Category</h4>
@@ -48,12 +46,13 @@ export function FilterSideBar() {
             {demoCategories.map((cat) => (
               <div key={cat._id} className="flex items-center gap-2">
                 <input
+                  id={cat._id}
                   className="list-none border border-primary-background/30 text-sm text-primary-background accent-primary-background shadow-sm drop-shadow-2xl"
                   type="checkbox"
                   name={cat.name}
                 ></input>
                 <label
-                  htmlFor={cat.name}
+                  htmlFor={cat._id}
                   className="text-sm text-primary-background/80"
                 >
                   {(cat.name as string).length > 15
@@ -100,6 +99,7 @@ export function FilterSideBar() {
             {demoPrices.map((prices) => (
               <div key={prices.id} className="flex items-center gap-2">
                 <input
+                  id={prices.id}
                   className="list-none border border-primary-background/30 text-sm text-primary-background accent-primary-background shadow-sm drop-shadow-2xl"
                   type="checkbox"
                   name={prices.id}
@@ -145,12 +145,13 @@ export function FilterSideBar() {
             {demoSizes.map((size) => (
               <div key={size.id} className="flex items-center gap-2">
                 <input
+                  id={size.id}
                   className="list-none border border-primary-background/30 text-sm text-primary-background accent-primary-background shadow-sm drop-shadow-2xl"
                   type="checkbox"
                   name={size.label}
                 ></input>
                 <label
-                  htmlFor={size.label}
+                  htmlFor={size.id}
                   className="text-sm text-primary-background/80"
                 >
                   {(size.label as string).length > 15
@@ -191,19 +192,23 @@ export function FilterSideBar() {
             {demoColors.map((color) => (
               <div key={color.id} className="flex items-center gap-2">
                 <input
+                  id={color.id}
                   className="list-none border border-primary-background/30 text-sm text-primary-background accent-primary-background shadow-sm drop-shadow-2xl"
                   type="checkbox"
                   name={color.name}
                 ></input>
                 <label
-                  htmlFor={color.name}
+                  htmlFor={color.id}
                   className="text-sm text-primary-background/80"
                 >
                   {(color.name as string).length > 15
                     ? `${color.name?.slice(0, 15)}...`
                     : `${color.name}`}
                 </label>
-                <p className={`h-6 w-6 bg-[${color.hex}]`}></p>
+                <p
+                  className={`h-4 w-4 rounded-full`}
+                  style={{ backgroundColor: color.hex }}
+                ></p>
               </div>
             ))}
             {showAllColors ? (
@@ -238,12 +243,13 @@ export function FilterSideBar() {
             {demoTags.map((tag) => (
               <div key={tag.id} className="flex items-center gap-2">
                 <input
+                  id={tag.id}
                   className="list-none border border-primary-background/30 text-sm text-primary-background accent-primary-background shadow-sm drop-shadow-2xl"
                   type="checkbox"
                   name={tag.label}
                 ></input>
                 <label
-                  htmlFor={tag.label}
+                  htmlFor={tag.id}
                   className="text-sm text-primary-background/80"
                 >
                   {(tag.label as string).length > 15
