@@ -635,3 +635,37 @@ export const demoTagData = [
   { id: "tag-ethnic", label: "Ethnic Wear", value: "ethnic-wear" },
   { id: "tag-winter", label: "Winter Collection", value: "winter-collection" },
 ]
+
+export const demoSaveMoreData = {
+  sectionTitle: "Save More Risk Nothing",
+  features: [
+    {
+      id: 1,
+      title: "Guaranteed Savings",
+      description:
+        "If you don't make your membership fee in savings, we'll refund the difference",
+      icon: "camera",
+    },
+    {
+      id: 2,
+      title: "Try it risk-free",
+      description:
+        "If you don't make your membership fee in savings, we'll refund the difference",
+      icon: "heart",
+    },
+    {
+      id: 3,
+      title: "Super Fast Delivery",
+      description:
+        "If you don't make your membership fee in savings, we'll refund the difference",
+      icon: "truck",
+    },
+    {
+      id: 4,
+      title: "1K+Products Priced at cost",
+      description:
+        "If you don't make your membership fee in savings, we'll refund the difference",
+      icon: "shield",
+    },
+  ],
+}

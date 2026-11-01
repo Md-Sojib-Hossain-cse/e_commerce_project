@@ -239,7 +239,7 @@ export default function Discount({
           {Array.from({ length: limit }).map((_, i) => (
             <div
               key={i}
-              className="h-[320px] w-full animate-pulse rounded-2xl bg-gray-100"
+              className="h-[320px] w-full animate-pulse rounded-md bg-gray-100"
             />
           ))}
         </div>
@@ -286,7 +286,7 @@ export default function Discount({
               : 0
             return (
               <Link key={p._id} href={href} className="group mt-4">
-                <Card className="bg-section relative w-full cursor-pointer rounded-2xl border-none shadow-sm transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg">
+                <Card className="bg-section relative w-full cursor-pointer rounded-md border-none shadow-sm transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg">
                   <CardContent className="flex flex-col p-3">
                     <div className="relative mb-4 grid h-28 w-full place-items-center overflow-hidden sm:h-32 lg:h-32">
                       {showSale && discountPct > 0 && (

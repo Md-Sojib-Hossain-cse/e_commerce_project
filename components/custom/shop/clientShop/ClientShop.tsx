@@ -6,6 +6,7 @@ import ShopContent from "./ShopContent"
 import { Button } from "@/components/ui/button"
 import { Funnel } from "lucide-react"
 import { useState } from "react"
+import SaveMore from "./SaveMore"
 
 const ClientShop = () => {
   const product = demoProducts
@@ -37,6 +38,7 @@ const ClientShop = () => {
           <ShopContent />
         </div>
       </div>
+      <SaveMore />
     </div>
   )
 }
