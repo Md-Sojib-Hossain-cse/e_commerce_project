@@ -17,6 +17,7 @@ body::-webkit-scrollbar {
     /* custom colors  */
     --color-primary-background: #151515;
     --color-primary-foreground: #FFFFFF;
+    --color-primary-white: #ffffff;
     --color-secondary-background: #F9FAFB;
     --color-secondary-foreground: #0F0F0F;
     --color-accent-background: #EFF6FF;
