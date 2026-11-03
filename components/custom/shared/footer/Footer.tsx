@@ -147,7 +147,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
                 <Link
-                  href="/faqs-page"
+                  href="/faq"
                   className="transition-colors hover:text-black"
                 >
                   FAQ
@@ -237,10 +237,7 @@ export default function Footer() {
             <h3 className="mb-4 font-semibold text-black">Shop</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <a
-                  href="/product-listing"
-                  className="transition-colors hover:text-black"
-                >
+                <a href="/shop" className="transition-colors hover:text-black">
                   Shop
                 </a>
               </li>

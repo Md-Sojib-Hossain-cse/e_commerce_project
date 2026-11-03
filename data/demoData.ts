@@ -1,4 +1,5 @@
 import type {
+  IFAQ,
   IProduct,
   ProductData,
   RemoteCategory,
@@ -669,3 +670,96 @@ export const demoSaveMoreData = {
     },
   ],
 }
+
+export const demoFaqs: IFAQ[] = [
+  {
+    id: 1,
+    question: "What sizes do you offer?",
+    answer:
+      "We offer a full range of sizes from XS to 3XL for most items. Check individual product pages for specific size charts and availability.",
+  },
+  {
+    id: 2,
+    question: "Do you offer free shipping?",
+    answer:
+      "Yes! We offer free shipping on orders over $75. Standard delivery takes 3-7 business days, with express options available.",
+  },
+  {
+    id: 3,
+    question: "What's your return policy?",
+    answer:
+      "We accept returns within 30 days of purchase. Items must be unworn with original tags. Free returns for exchanges or store credit.",
+  },
+  {
+    id: 4,
+    question: "How do I find my perfect fit?",
+    answer:
+      "Use our detailed size guides on each product page. We also offer virtual fitting tools and customer reviews with fit feedback.",
+  },
+  {
+    id: 5,
+    question: "How can I track my order?",
+    answer:
+      "Once your order is shipped, you'll receive a tracking number via SMS or email. You can use it to check your delivery status.",
+  },
+  {
+    id: 6,
+    question: "What payment methods do you accept?",
+    answer:
+      "We accept major debit and credit cards, mobile banking, and other available payment methods at checkout.",
+  },
+  {
+    id: 7,
+    question: "Can I cancel or modify my order?",
+    answer:
+      "You can request an order cancellation or modification before it is processed or shipped. Please contact our support team as soon as possible.",
+  },
+  {
+    id: 8,
+    question: "How long does delivery take?",
+    answer:
+      "Delivery time depends on your location. Orders are generally delivered within 2-5 business days in major cities and 3-7 business days in other areas.",
+  },
+  {
+    id: 9,
+    question: "Are the product images accurate?",
+    answer:
+      "We try our best to display accurate product images and descriptions. However, slight color variations may occur due to lighting and screen settings.",
+  },
+  {
+    id: 10,
+    question: "Will an item be restocked if it's sold out?",
+    answer:
+      "Some sold-out products may be restocked. Contact our support team or check the product page regularly for availability updates.",
+  },
+  {
+    id: 11,
+    question: "How can I contact customer support?",
+    answer:
+      "You can reach us through our Contact Us page, email, or phone. Our support team will be happy to assist you with your questions.",
+  },
+  {
+    id: 12,
+    question: "Do you offer discounts or promotional deals?",
+    answer:
+      "Yes! We regularly offer seasonal discounts, special promotions, and exclusive deals. Subscribe to our newsletter to stay updated.",
+  },
+  {
+    id: 13,
+    question: "Can I exchange an item for a different size?",
+    answer:
+      "Yes, exchanges may be available depending on product availability and our exchange policy. Contact customer support to arrange an exchange.",
+  },
+  {
+    id: 14,
+    question: "How do I know if my order was successful?",
+    answer:
+      "After placing an order, you'll receive an order confirmation with your order details through SMS or email.",
+  },
+  {
+    id: 15,
+    question: "Do I need an account to place an order?",
+    answer:
+      "You may be able to place an order as a guest without creating an account. However, having an account makes it easier to track orders and manage your shopping history.",
+  },
+]

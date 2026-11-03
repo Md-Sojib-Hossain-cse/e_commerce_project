@@ -241,3 +241,9 @@ export interface RemoteCategory {
 
   subCategories?: RemoteSubCategory[]
 }
+
+export interface IFAQ {
+  id: number
+  question: string
+  answer: string
+}
