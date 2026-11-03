@@ -85,9 +85,9 @@ export default function Footer() {
                   {settings?.contactAndSocial?.facebookUrl?.map(
                     (url, index) => {
                       const labels = [
-                        "Dressen Facebook Page",
-                        "Dressen Facebook Page",
-                        "Dressen Facebook Page",
+                        "Chaity Facebook Page",
+                        "Chaity Facebook Page",
+                        "Chaity Facebook Page",
                       ]
                       return (
                         <a
