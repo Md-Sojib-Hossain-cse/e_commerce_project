@@ -247,3 +247,13 @@ export interface IFAQ {
   question: string
   answer: string
 }
+
+export interface IReturnPolicy {
+  id: number
+  title: string
+  icon: string
+  description: string
+  points: string[]
+  footer?: string
+  variant: "default" | "featured" | "muted"
+}

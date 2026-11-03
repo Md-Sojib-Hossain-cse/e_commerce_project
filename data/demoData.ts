@@ -1,6 +1,6 @@
 import type {
-  IFAQ,
   IProduct,
+  IReturnPolicy,
   ProductData,
   RemoteCategory,
   RemoteProduct,
@@ -671,7 +671,7 @@ export const demoSaveMoreData = {
   ],
 }
 
-export const demoFaqs: IFAQ[] = [
+export const demoFaqs = [
   {
     id: 1,
     question: "What sizes do you offer?",
@@ -761,5 +761,86 @@ export const demoFaqs: IFAQ[] = [
     question: "Do I need an account to place an order?",
     answer:
       "You may be able to place an order as a guest without creating an account. However, having an account makes it easier to track orders and manage your shopping history.",
+  },
+]
+
+export const demoReturnPolicyData: IReturnPolicy[] = [
+  {
+    id: 1,
+    title: "Eligibility for Return",
+    icon: "CircleCheck",
+    description: "You can request a return or exchange if:",
+    points: [
+      "The product is unused, unwashed, and in original condition.",
+      "Tags and packaging are intact.",
+      "The request is made within 3 days of receiving the product.",
+    ],
+    variant: "default",
+  },
+  {
+    id: 2,
+    title: "Non-Returnable Items",
+    icon: "CircleAlert",
+    description: "We do not accept returns for:",
+    points: [
+      "Used or damaged products.",
+      "Items with perfume, stains, or signs of wear.",
+      "Clearance/discounted items (unless defective).",
+      "Customized or limited-edition drops (depends on availability).",
+    ],
+    variant: "default",
+  },
+  {
+    id: 3,
+    title: "Wrong or Defective Products",
+    icon: "Package",
+    description: "If you receive a wrong item or a defective product:",
+    points: [
+      "We will replace it free of cost.",
+      "You must provide an unboxing video or photo as proof.",
+    ],
+    variant: "default",
+  },
+  {
+    id: 4,
+    title: "Exchange Policy",
+    icon: "RefreshCw",
+    description: "You may exchange for:",
+    points: [
+      "A different size.",
+      "A different color (if available).",
+      "A different item (price difference applicable).",
+    ],
+    variant: "default",
+  },
+  {
+    id: 5,
+    title: "Return Process",
+    icon: "Phone",
+    description: "To start a return, please contact us:",
+    points: [
+      "Facebook Page: Dressen",
+      "Customer Support: +8801909008004 (WhatsApp)",
+    ],
+    footer: "Provide your order number, full name, and reason for return.",
+    variant: "featured",
+  },
+  {
+    id: 6,
+    title: "Refund",
+    icon: "Wallet",
+    description:
+      "We currently offer exchange or store credit only. (No cash refunds at this moment.)",
+    points: [],
+    variant: "muted",
+  },
+  {
+    id: 7,
+    title: "Delivery Charges",
+    icon: "Truck",
+    description:
+      "Return delivery charges may apply unless the product is defective or incorrectly delivered.",
+    points: [],
+    variant: "muted",
   },
 ]
