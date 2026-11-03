@@ -5,9 +5,7 @@ import { useState } from "react"
 const ClientQuery = () => {
   const [message, setMessage] = useState("")
 
-  const handleSubmit = () => {
-    console.log("Client Query:", message)
-  }
+  const handleSubmit = () => {}
 
   return (
     <div className="w-full space-y-1 px-2 pt-6 md:space-y-2 md:p-4 md:pt-8 lg:p-6 lg:pt-12">

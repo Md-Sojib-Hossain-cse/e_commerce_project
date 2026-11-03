@@ -1,4 +1,5 @@
 import type {
+  IPrivacyPolicy,
   IProduct,
   IReturnPolicy,
   ProductData,
@@ -842,5 +843,103 @@ export const demoReturnPolicyData: IReturnPolicy[] = [
       "Return delivery charges may apply unless the product is defective or incorrectly delivered.",
     points: [],
     variant: "muted",
+  },
+]
+
+export const demoPrivacyPolicyData: IPrivacyPolicy[] = [
+  {
+    id: 1,
+    title: "General",
+    icon: "FileText",
+    paragraphs: [
+      "Dressen reserves the right to update, modify, or change any part of these terms at any time.",
+      "Continued use of the website after any change constitutes acceptance of the updated terms.",
+    ],
+  },
+  {
+    id: 2,
+    title: "Product Information",
+    icon: "Package",
+    points: [
+      "We aim to provide accurate descriptions and photos of our products.",
+      "Colors may vary slightly due to lighting or screen settings.",
+      "Availability of products is not guaranteed; items may sell out or be discontinued without notice.",
+    ],
+  },
+  {
+    id: 3,
+    title: "Pricing & Payment",
+    icon: "DollarSign",
+    points: [
+      "All prices shown on the website are final and include applicable taxes (unless stated otherwise).",
+      "Payment must be completed before order processing.",
+      "We reserve the right to change prices at any time.",
+    ],
+  },
+  {
+    id: 4,
+    title: "Orders & Shipping",
+    icon: "Box",
+    points: [
+      "Orders are processed only after full payment is received.",
+      "Delivery time may vary based on location and logistics conditions.",
+      "Incorrect shipping information provided by the customer may cause delivery delays or failed delivery.",
+    ],
+  },
+  {
+    id: 5,
+    title: "Return & Exchange Policy",
+    icon: "FileText",
+    paragraphs: [
+      "By placing an order, you agree to our Return & Exchange Policy.",
+    ],
+  },
+  {
+    id: 6,
+    title: "Cancellation",
+    icon: "CircleX",
+    points: [
+      "Orders may be cancelled before packaging or dispatch.",
+      "Once the order is shipped, cancellation is not possible.",
+      "Dressen reserves the right to cancel any order due to stock issues, payment problems, or suspected fraud.",
+    ],
+  },
+  {
+    id: 7,
+    title: "Intellectual Property",
+    icon: "Copyright",
+    paragraphs: [
+      "All text, images, graphics, logos, and content on this website are the property of Dressen.",
+      "Unauthorized use, reproduction, or distribution is prohibited.",
+    ],
+  },
+  {
+    id: 8,
+    title: "User Responsibilities",
+    icon: "UserRoundX",
+    description: "You agree not to:",
+    points: [
+      "Misuse our website.",
+      "Try to hack, disrupt, or interfere with the website's operation.",
+      "Use fake information or fraudulent payment methods.",
+    ],
+  },
+  {
+    id: 9,
+    title: "Privacy",
+    icon: "Lock",
+    paragraphs: [
+      "Your personal data is handled according to our Privacy Policy.",
+      "We do not sell or misuse your information.",
+    ],
+  },
+  {
+    id: 10,
+    title: "Limitation of Liability",
+    icon: "ShieldAlert",
+    paragraphs: [
+      "Dressen is not responsible for any direct or indirect losses caused by misuse of our website or products.",
+      "We are not liable for delays caused by courier services, strikes, weather issues, or unforeseen events.",
+    ],
   },
 ]

@@ -12,8 +12,6 @@ import {
 
 const ReturnPolicyCard = (props: { policy: IReturnPolicy; index: number }) => {
   const { policy, index } = props
-  console.log(props.policy)
-  console.log(props.index)
   return (
     <div
       className={`space-y-2 rounded-md border border-primary-background/10 p-4 transition duration-300 ease-in-out hover:shadow-md lg:space-y-4 lg:p-6 ${index === 4 ? "md:col-span-2" : ""} ${policy.points.length > 0 ? "bg-primary-white" : "bg-primary-background/10"}`}

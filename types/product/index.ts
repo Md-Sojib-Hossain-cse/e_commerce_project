@@ -257,3 +257,12 @@ export interface IReturnPolicy {
   footer?: string
   variant: "default" | "featured" | "muted"
 }
+
+export interface IPrivacyPolicy {
+  id: number
+  title: string
+  icon: string
+  description?: string
+  paragraphs?: string[]
+  points?: string[]
+}
