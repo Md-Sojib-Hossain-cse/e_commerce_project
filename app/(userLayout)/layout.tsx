@@ -10,7 +10,6 @@ import { useAppSelector } from "@/redux/hook"
 const UserLayout = ({ children }: { children: React.ReactNode }) => {
   const currentUser = useAppSelector(selectCurrentUser)
 
-  console.log(currentUser)
 
   return (
     <div>

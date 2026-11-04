@@ -15,7 +15,6 @@ const ProductSearch = (params: { productCount: number }) => {
     // Get the input value
     const query = formData.get("search") as string
 
-    console.log("Search Query:", query)
   }
 
   return (

@@ -58,9 +58,9 @@ export function AuthForm(props: { type: TType }) {
   })
 
   const loginSubmit = (data: z.infer<typeof registerFormSchema>) => {
-    console.log("Login Submit", data)
     const authInfo = {
       user: {
+        id: 1,
         name: data.name,
         email: data.email,
         password: data.password,
@@ -78,7 +78,6 @@ export function AuthForm(props: { type: TType }) {
   }
 
   const registrationSubmit = (data: z.infer<typeof registerFormSchema>) => {
-    console.log("Registration Submit", data)
     toast(
       `${data.name || "User"} Registration information submitted successfully`,
       {
