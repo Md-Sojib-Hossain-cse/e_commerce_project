@@ -5,14 +5,16 @@ import Image from "next/image"
 
 import { ShoppingCart, LogOut } from "lucide-react"
 import { usePathname } from "next/navigation"
-import { useAppSelector } from "@/redux/hook"
-import { selectCurrentUser } from "@/redux/features/auth/authSlice"
+import { useAppDispatch, useAppSelector } from "@/redux/hook"
+import { logoutUser, selectCurrentUser } from "@/redux/features/auth/authSlice"
+import { toast } from "sonner"
+import { selectCartTotalItems } from "@/redux/features/cart/cartSlice"
 
 export default function MainMenu() {
   const pathname = usePathname()
   const currentUser = useAppSelector(selectCurrentUser)
-
-  const cartCount = 10
+  const dispatch = useAppDispatch()
+  const cartItemCount = useAppSelector(selectCartTotalItems)
 
   const isLoggedIn = Boolean(currentUser?.id)
   const displayName =
@@ -27,7 +29,10 @@ export default function MainMenu() {
   // User image debugging removed
 
   // 🚪 লগআউট হ্যান্ডলার: NextAuth + Redux + ব্যাকএন্ড ক্লিন
-  const handleLogout = async () => {}
+  const handleLogout = async () => {
+    dispatch(logoutUser())
+    toast("User logged out successfully!")
+  }
 
   return (
     <div className="relative right-1/2 left-1/2 -mr-[50vw] -ml-[50vw] hidden w-screen bg-primary-background text-primary-foreground lg:block">
@@ -95,8 +100,13 @@ export default function MainMenu() {
                       }}
                     />
                   </div>
-                  <span className="max-w-24 truncate">
-                    {displayName ?? "Account"}
+                  <span
+                    className="max-w-24 truncate"
+                    title={(displayName && displayName) ?? "Account"}
+                  >
+                    {displayName && displayName?.length > 10
+                      ? `${displayName.slice(0, 10)}..`
+                      : (displayName ?? "Account")}
                   </span>
                 </Link>
 
@@ -119,9 +129,9 @@ export default function MainMenu() {
               aria-label="Cart"
             >
               <ShoppingCart size={20} />
-              {cartCount > 0 && (
+              {cartItemCount > 0 && (
                 <span className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary-foreground px-1 text-xs font-medium text-primary-background">
-                  {cartCount > 99 ? "99+" : cartCount}
+                  {cartItemCount > 99 ? "99+" : cartItemCount}
                 </span>
               )}
             </Link>

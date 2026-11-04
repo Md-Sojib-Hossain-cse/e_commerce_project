@@ -18,6 +18,8 @@ import { useMemo } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import type { IProduct, RemoteCategory } from "@/types/product"
 import { Button } from "@/components/ui/button"
+import { useAppDispatch } from "@/redux/hook"
+import { addToCart } from "@/redux/features/cart/cartSlice"
 
 /* ---------- safe access helpers (no any) ---------- */
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -484,6 +486,30 @@ export default function CategoryProductCards() {
     },
   ]
 
+  const dispatch = useAppDispatch()
+
+  const handleAddToCart = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    it: {
+      id: string
+      image?: string
+      priceText?: string
+      title?: string
+    }
+  ) => {
+    e.stopPropagation()
+    console.log(it)
+    dispatch(
+      addToCart({
+        productId: it.id,
+        name: "Unnamed Product",
+        image: it?.image || "image.jpg",
+        quantity: 1,
+        unitPrice: 80,
+      })
+    )
+  }
+
   const router = useRouter()
   const params = useSearchParams()
 
@@ -588,7 +614,10 @@ export default function CategoryProductCards() {
                             {it.priceText}
                           </p>
                         )}
-                        <Button className={"mt-3 w-full p-5"}>
+                        <Button
+                          onClick={(e) => handleAddToCart(e, it)}
+                          className={"mt-3 w-full p-5"}
+                        >
                           Add to Cart
                         </Button>
                       </div>

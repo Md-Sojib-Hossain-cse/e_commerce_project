@@ -1,12 +1,13 @@
-"use client";
+"use client"
 
-import { ShoppingCart, Search, Heart } from "lucide-react";
-import { useState } from "react";
+import { selectCartTotalItems } from "@/redux/features/cart/cartSlice"
+import { useAppSelector } from "@/redux/hook"
+import { ShoppingCart, Search, Heart } from "lucide-react"
+import { useState } from "react"
 
 const NavbarActions = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
-
-  const cartCount = 5;
+  const [isCartOpen, setIsCartOpen] = useState(false)
+  const cartItemCount = useAppSelector(selectCartTotalItems)
 
   return (
     <>
@@ -17,9 +18,9 @@ const NavbarActions = () => {
           className="relative cursor-pointer"
         >
           <ShoppingCart size={18} />
-          {cartCount > 0 && (
-            <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full p-0 flex items-center justify-center text-xs bg-orange-500 hover:bg-orange-600 text-white">
-              <span className="p-1">{cartCount}</span>
+          {cartItemCount > 0 && (
+            <span className="absolute -top-1 -right-1 flex h-3 w-3 items-center justify-center rounded-full bg-orange-500 p-0 text-xs text-white hover:bg-orange-600">
+              <span className="p-1">{cartItemCount || 0}</span>
             </span>
           )}
           <Heart size={18} />
@@ -31,7 +32,7 @@ const NavbarActions = () => {
         cartItems={customerCartItems}
       /> */}
     </>
-  );
-};
+  )
+}
 
-export default NavbarActions;
+export default NavbarActions

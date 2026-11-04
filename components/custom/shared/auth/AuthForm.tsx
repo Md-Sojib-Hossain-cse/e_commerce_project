@@ -27,6 +27,7 @@ import Link from "next/link"
 import { Checkbox } from "@/components/ui/checkbox"
 import { useAppDispatch } from "@/redux/hook"
 import { setUser } from "@/redux/features/auth/authSlice"
+import { useRouter } from "next/navigation"
 
 type TType = "login" | "register"
 
@@ -47,6 +48,7 @@ export function AuthForm(props: { type: TType }) {
   const [showPassword, setShowPassword] = React.useState(false)
   const [rememberMe, setRememberMe] = React.useState(false)
   const dispatch = useAppDispatch()
+  const router = useRouter()
 
   const form = useForm<z.infer<typeof registerFormSchema>>({
     resolver: zodResolver(registerFormSchema),
@@ -75,6 +77,8 @@ export function AuthForm(props: { type: TType }) {
       icon: <CircleCheckBig />,
       position: "top-right",
     })
+
+    router.push("/")
   }
 
   const registrationSubmit = (data: z.infer<typeof registerFormSchema>) => {
@@ -87,6 +91,8 @@ export function AuthForm(props: { type: TType }) {
         position: "top-right",
       }
     )
+
+    router.push("/auth/login")
   }
 
   return (
