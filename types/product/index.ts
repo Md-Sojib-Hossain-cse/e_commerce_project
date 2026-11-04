@@ -266,3 +266,9 @@ export interface IPrivacyPolicy {
   paragraphs?: string[]
   points?: string[]
 }
+
+export interface IUser {
+  name: string
+  email: string
+  password: string
+}
