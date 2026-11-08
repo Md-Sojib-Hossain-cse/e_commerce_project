@@ -7,8 +7,8 @@ const iconMap: Record<string, LucideIcon> = {
   "rotate-ccw": RotateCcw,
 }
 
-const WhyChooseDressen = () => {
-  const whyChooseDressen = [
+const WhyChooseChaity = () => {
+  const whyChooseChaity = [
     {
       id: 1,
       icon: "package",
@@ -41,10 +41,10 @@ const WhyChooseDressen = () => {
   return (
     <div className="min-h-78 bg-primary-background p-8 text-primary-foreground md:p-12">
       <h2 className="mb-4 text-center text-3xl font-bold">
-        Why Choose Dressen?
+        Why Choose Chaity?
       </h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {whyChooseDressen.map((item) => {
+        {whyChooseChaity.map((item) => {
           // 2. Look up the component dynamically inside the map loop
           const IconComponent = iconMap[item.icon as keyof typeof iconMap]
 
@@ -73,4 +73,4 @@ const WhyChooseDressen = () => {
   )
 }
 
-export default WhyChooseDressen
+export default WhyChooseChaity

@@ -2,6 +2,8 @@
 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { useAppDispatch } from "@/redux/hook"
+import { addToCart } from "@/redux/features/cart/cartSlice"
 
 type FallbackProduct = {
   id: string
@@ -32,6 +34,24 @@ const fallbackProducts: FallbackProduct[] = [
 ]
 
 export default function CategoryProductCardsFallback() {
+  const dispatch = useAppDispatch()
+
+  const handleAddToCart = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    it: FallbackProduct
+  ) => {
+    e.stopPropagation()
+    e.preventDefault()
+    dispatch(
+      addToCart({
+        productId: it.id,
+        name: it.title || "Unnamed Product",
+        image: it?.image || "image.jpg",
+        quantity: 1,
+        unitPrice: it.price || 80,
+      })
+    )
+  }
   return (
     <section id="category-product-cards-fallback" className="w-full bg-white">
       <div className="mx-auto w-full max-w-7xl px-3 md:px-4 xl:px-6">
@@ -64,7 +84,7 @@ export default function CategoryProductCardsFallback() {
                   <Button
                     type="button"
                     className="mt-3 w-full p-5"
-                    onClick={(event) => event.stopPropagation()}
+                    onClick={(event) => handleAddToCart(event, product)}
                   >
                     Add to Cart
                   </Button>

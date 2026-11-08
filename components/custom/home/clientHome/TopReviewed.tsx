@@ -6,6 +6,8 @@ import { memo, useMemo } from "react"
 import { motion } from "framer-motion"
 import type { IProduct } from "@/types/product"
 import { Button } from "@/components/ui/button"
+import { useAppDispatch } from "@/redux/hook"
+import { addToCart } from "@/redux/features/cart/cartSlice"
 
 /** ---------- helpers (type-safe) ---------- */
 const toNum = (v: unknown): number => {
@@ -204,6 +206,7 @@ function TopReviewedImpl({
   title = "Top Reviewed Products",
   limit = 6,
 }: Props) {
+  const dispatch = useAppDispatch()
   const items = useMemo<UIItem[]>(() => {
     // 1) real reviewed (rating>0)
     const real = Array.isArray(data) ? mapRealReviewed(data, limit) : []
@@ -219,6 +222,22 @@ function TopReviewedImpl({
   }, [data, limit])
 
   const isFallback = items.some((x) => x.fallback)
+
+  const handleAddToCart = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    it: UIItem
+  ) => {
+    e.stopPropagation()
+    dispatch(
+      addToCart({
+        productId: it.id,
+        name: it.title || "Unnamed Product",
+        image: it?.image || "image.jpg",
+        quantity: 1,
+        unitPrice: it.price || 80,
+      })
+    )
+  }
 
   return (
     <section className="w-full">
@@ -308,7 +327,6 @@ function TopReviewedImpl({
                     <div className="mt-3 line-clamp-2 text-[13px] font-medium text-primary-background sm:text-sm">
                       {p.title}
                     </div>
-
                     {/* rating */}
                     <div className="mt-1 flex items-center gap-2">
                       <Stars value={p.rating} />
@@ -316,18 +334,19 @@ function TopReviewedImpl({
                         ({p.reviews})
                       </span>
                     </div>
-
                     {/* price */}
                     <div className="mt-2 flex min-h-[24px] items-center">
                       <span className="text-sm font-semibold text-primary-background sm:text-base">
                         {formatBDT(p.price)}
                       </span>
                     </div>
-
                     {/* CTA */}
                     <div className="mt-auto w-full">
-                      <Button className="inline-flex h-9 w-full items-center justify-center rounded-md text-sm font-bold text-primary-foreground transition-colors">
-                        View details
+                      <Button
+                        onClick={(e) => handleAddToCart(e, p)}
+                        className="inline-flex h-9 w-full items-center justify-center rounded-md text-sm font-bold text-primary-foreground transition-colors"
+                      >
+                        Add to cart
                       </Button>
                     </div>
                   </div>

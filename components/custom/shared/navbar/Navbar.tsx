@@ -1,10 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
-import {
-  useState,
-  useMemo,
-} from "react"
+import { useState, useMemo } from "react"
 import Link from "next/link"
 import {
   Menu,
@@ -48,7 +45,7 @@ export default function Navbar() {
   const router = useRouter()
 
   const settings = {
-    logo: "https://res.cloudinary.com/dikjzg7df/image/upload/v1792817904/logo_puciyl.jpg",
+    logo: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1793880138/logo1_pste1f.jpg",
   }
 
   const cartItems = [{}, {}] // Replace with actual cart items from your state or context
@@ -243,7 +240,7 @@ export default function Navbar() {
                 {settings?.logo ? (
                   <Image
                     src={settings.logo}
-                    alt="Dressen Logo"
+                    alt="Chaity Logo"
                     width={120}
                     height={40}
                     className="h-10"
@@ -251,7 +248,7 @@ export default function Navbar() {
                   />
                 ) : (
                   <span className="text-3xl font-extrabold text-primary">
-                    Dressen
+                    Chaity
                   </span>
                 )}
               </Link>
@@ -327,13 +324,13 @@ export default function Navbar() {
                   {/* {settings?.logo ? (
                     <Image
                       src={settings.logo}
-                      alt="Dressen Logo"
+                      alt="Chaity Logo"
                       width={80}
                       height={32}
                       className="h-8 w-auto"
                     />
                   ) : ( */}
-                  <span className="text-xl font-bold text-accent">Dressen</span>
+                  <span className="text-xl font-bold text-accent">Chaity</span>
                   {/* )} */}
                 </Link>
               </div>

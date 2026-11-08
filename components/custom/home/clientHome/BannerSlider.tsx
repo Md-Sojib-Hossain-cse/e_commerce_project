@@ -19,13 +19,13 @@ const FALLBACK: Slide[] = [
   {
     _id: "f1",
     imageUrl: "/about1.jpg",
-    alt: "Dressen Banner",
+    alt: "Chaity Banner",
     href: "/products/footwear",
   },
   {
     _id: "f2",
     imageUrl: "/about2.jpg",
-    alt: "Dressen Banner",
+    alt: "Chaity Banner",
     href: "/products/new",
   },
 ]

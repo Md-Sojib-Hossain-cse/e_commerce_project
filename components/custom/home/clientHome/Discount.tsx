@@ -3,6 +3,9 @@ import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { type IProduct, type ProductData } from "@/types/product"
+import React from "react"
+import { useAppDispatch } from "@/redux/hook"
+import { addToCart } from "@/redux/features/cart/cartSlice"
 
 // 🔒 Props: API shape বা UI shape – দুইটাই সাপোর্ট
 type Props = {
@@ -227,6 +230,7 @@ export default function Discount({
   // }, [data, limit]);
 
   const items = discountDemoData
+  const dispatch = useAppDispatch()
 
   // Loader
   if (loading) {
@@ -249,6 +253,24 @@ export default function Discount({
 
   // Show only actual data, no fallback
   const dataset = items
+
+  const handleAddToCart = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    it: IProduct
+  ) => {
+    e.stopPropagation()
+    e.preventDefault()
+    console.log(it)
+    dispatch(
+      addToCart({
+        productId: it._id,
+        name: "Unnamed Product",
+        image: it?.image || "image.jpg",
+        quantity: 1,
+        unitPrice: 80,
+      })
+    )
+  }
 
   return (
     <section className="w-full pt-2 pb-6">
@@ -330,7 +352,10 @@ export default function Discount({
                       )}
                     </div>
                     <div className="mt-auto">
-                      <Button className={"w-full rounded-md p-5"}>
+                      <Button
+                        onClick={(e) => handleAddToCart(e, p)}
+                        className={"w-full rounded-md p-5"}
+                      >
                         Add to Cart
                       </Button>
                     </div>

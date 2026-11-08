@@ -13,7 +13,7 @@ const ClientReturnPolicy = () => {
           Return & Exchange Policy
         </h3>
         <p className="mx-auto w-full max-w-lg text-center text-primary-background/80">
-          We want you to have the best experience with Dressen. If something is
+          We want you to have the best experience with Chaity. If something is
           not right, we are here to help.
         </p>
       </div>

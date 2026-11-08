@@ -15,11 +15,12 @@ export const demoProducts: IProduct[] = [
       "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     price: 850,
     shopId: "shop_001",
-    featuredImg: "https://placehold.co/800x800?text=Cotton+T-Shirt",
+    featuredImg:
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     gallery: [
-      "https://placehold.co/800x800?text=T-Shirt+Front",
-      "https://placehold.co/800x800?text=T-Shirt+Back",
-      "https://placehold.co/800x800?text=T-Shirt+Detail",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     ],
     brandAndCategories: {
       brand: { name: "Urban Style" },
@@ -820,7 +821,7 @@ export const demoReturnPolicyData: IReturnPolicy[] = [
     icon: "Phone",
     description: "To start a return, please contact us:",
     points: [
-      "Facebook Page: Dressen",
+      "Facebook Page: Chaity",
       "Customer Support: +8801909008004 (WhatsApp)",
     ],
     footer: "Provide your order number, full name, and reason for return.",
@@ -852,7 +853,7 @@ export const demoPrivacyPolicyData: IPrivacyPolicy[] = [
     title: "General",
     icon: "FileText",
     paragraphs: [
-      "Dressen reserves the right to update, modify, or change any part of these terms at any time.",
+      "Chaity reserves the right to update, modify, or change any part of these terms at any time.",
       "Continued use of the website after any change constitutes acceptance of the updated terms.",
     ],
   },
@@ -901,7 +902,7 @@ export const demoPrivacyPolicyData: IPrivacyPolicy[] = [
     points: [
       "Orders may be cancelled before packaging or dispatch.",
       "Once the order is shipped, cancellation is not possible.",
-      "Dressen reserves the right to cancel any order due to stock issues, payment problems, or suspected fraud.",
+      "Chaity reserves the right to cancel any order due to stock issues, payment problems, or suspected fraud.",
     ],
   },
   {
@@ -909,7 +910,7 @@ export const demoPrivacyPolicyData: IPrivacyPolicy[] = [
     title: "Intellectual Property",
     icon: "Copyright",
     paragraphs: [
-      "All text, images, graphics, logos, and content on this website are the property of Dressen.",
+      "All text, images, graphics, logos, and content on this website are the property of Chaity.",
       "Unauthorized use, reproduction, or distribution is prohibited.",
     ],
   },
@@ -938,7 +939,7 @@ export const demoPrivacyPolicyData: IPrivacyPolicy[] = [
     title: "Limitation of Liability",
     icon: "ShieldAlert",
     paragraphs: [
-      "Dressen is not responsible for any direct or indirect losses caused by misuse of our website or products.",
+      "Chaity is not responsible for any direct or indirect losses caused by misuse of our website or products.",
       "We are not liable for delays caused by courier services, strikes, weather issues, or unforeseen events.",
     ],
   },

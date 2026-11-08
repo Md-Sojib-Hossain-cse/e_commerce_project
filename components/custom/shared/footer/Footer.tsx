@@ -8,7 +8,6 @@ import {
   FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa6"
-import { Mail } from "lucide-react"
 import { IoMdMail } from "react-icons/io"
 
 export default function Footer() {
@@ -24,7 +23,7 @@ export default function Footer() {
   }
   const isLoggedIn = Boolean(currentUser?.id)
   const settings = {
-    logo: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1793168158/dressenlogo_h2qkni.jpg",
+    logo: "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1793880138/logo1_pste1f.jpg",
 
     contactAndSocial: {
       facebookUrl: ["https://www.facebook.com/chaitygroup/"],
@@ -49,8 +48,6 @@ export default function Footer() {
     },
   }
   // const sellerHref = isLoggedIn ? "/sr" : "/auth/login";
-
-  const sellerHref = "https://dressen-admin-panel-gamma.vercel.app/auth/login"
 
   return (
     <footer className="shadow-t border-neutral mb-12 border-t bg-white px-6 py-12 shadow-sm lg:mb-0">
@@ -184,11 +181,11 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
                 <a
-                  href={`mailto:${settings?.contactAndSocial?.email || "dressenbd@gmail.com"}`}
+                  href={`mailto:${settings?.contactAndSocial?.email || "Chaitybd@gmail.com"}`}
                   className="flex items-center gap-2 transition-colors hover:text-black"
                 >
                   <IoMdMail className="h-5 w-5" />
-                  {settings?.contactAndSocial?.email || "dressenbd@gmail.com"}
+                  {settings?.contactAndSocial?.email || "Chaitybd@gmail.com"}
                 </a>
               </li>
               <li>
@@ -251,12 +248,12 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://dressen-admin-panel-gamma.vercel.app/auth/login"
+                  href="https://Chaity-admin-panel-gamma.vercel.app/auth/login"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-black"
                 >
-                  Dressen Admin
+                  Chaity Admin
                 </a>
               </li>
             </ul>
@@ -286,7 +283,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-12 border-t border-gray-200 pt-8 text-center">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Dressen Ltd. All rights reserved -
+            © {new Date().getFullYear()} Chaity Ltd. All rights reserved -
             Design &amp; Developed by{" "}
             <span className="text-md">Chaity Composite Ltd IT Team</span>
           </p>

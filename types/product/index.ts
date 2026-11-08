@@ -40,22 +40,27 @@ export interface IProduct {
   name?: string
   image?: string
   price?: number
+
   shopId: string
   featuredImg: string
   gallery: string[]
+
   brandAndCategories: {
-    brand: string | { name: string } //take both string and name property
+    brand: string | { name: string }
     categories: Array<{ name: string }>
     tags: Array<{ name: string }>
   }
+
   description: {
     name: string
-    slug: string // Required
+    slug: string
     unit: string
     description: string
     status: string
   }
+
   productType: string
+
   productInfo: {
     price: number
     salePrice: number
@@ -65,10 +70,57 @@ export interface IProduct {
     height: string
     length: string
   }
-  specifications?: Array<{ key: string; value: string; _id?: string }>
+
+  specifications?: Array<{
+    key: string
+    value: string
+    _id?: string
+  }>
+
+  variants?: IVariant[]
+
   rating?: number
   createdAt?: string
   updatedAt?: string
+}
+
+export interface IVariant {
+  _id: string
+
+  // Dynamic attributes: size, color, material, etc.
+  attributes: Record<string, string>
+
+  price: number
+  salePrice: number
+  quantity: number
+  sku: string
+
+  image?: string
+}
+
+export interface ICartItem {
+  productId: string
+  shopId: string
+
+  name: string
+  image: string
+  slug: string
+  unit: string
+
+  // Product-level pricing (useful for non-variant products)
+  price: number
+  salePrice: number
+
+  // Selected product variants and their individual quantities
+  variants: Array<{
+    variantId: string
+    attributes: Record<string, string>
+    quantity: number
+    price: number
+    salePrice: number
+    sku: string
+    image?: string
+  }>
 }
 
 export interface RemoteProduct {
