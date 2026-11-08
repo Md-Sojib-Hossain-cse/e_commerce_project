@@ -1,0 +1,143 @@
+"use client"
+
+import Link from "next/link"
+import Image from "next/image"
+
+import { ShoppingCart, LogOut } from "lucide-react"
+import { usePathname } from "next/navigation"
+import { useAppDispatch, useAppSelector } from "@/redux/hook"
+import { logoutUser, selectCurrentUser } from "@/redux/features/auth/authSlice"
+import { toast } from "sonner"
+import { selectCartTotalItems } from "@/redux/features/cart/cartSlice"
+
+export default function MainMenu() {
+  const pathname = usePathname()
+  const currentUser = useAppSelector(selectCurrentUser)
+  const dispatch = useAppDispatch()
+  const cartItemCount = useAppSelector(selectCartTotalItems)
+
+  const isLoggedIn = Boolean(currentUser?.id)
+  const displayName =
+    currentUser?.name ??
+    (currentUser?.email ? currentUser.email.split("@")[0] : undefined)
+
+  // User image URL - API থেকে আসা image বা fallback avatar
+  const userImage =
+    currentUser?.image ||
+    "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1793788773/user_epaq22.jpg"
+
+  // User image debugging removed
+
+  // 🚪 লগআউট হ্যান্ডলার: NextAuth + Redux + ব্যাকএন্ড ক্লিন
+  const handleLogout = async () => {
+    dispatch(logoutUser())
+    toast("User logged out successfully!")
+  }
+
+  return (
+    <div className="relative right-1/2 left-1/2 -mr-[50vw] -ml-[50vw] hidden w-screen bg-primary-background text-primary-foreground lg:block">
+      <div className="mx-auto w-full max-w-7xl px-3 md:px-6 lg:px-8">
+        <div className="flex h-10 items-center justify-between">
+          {/* Left menu */}
+          <div className="flex items-center gap-5 py-2 pl-6 text-sm text-primary-foreground">
+            <Link
+              href="/"
+              className={pathname === "/" ? "underline" : "hover:underline"}
+            >
+              Home
+            </Link>
+            <Link
+              href="/shop"
+              className={pathname === "/shop" ? "underline" : "hover:underline"}
+            >
+              Shop
+            </Link>
+            <Link
+              href="/about"
+              className={
+                pathname === "/about" ? "underline" : "hover:underline"
+              }
+            >
+              About
+            </Link>
+            <Link
+              href="/contact-us"
+              className={
+                pathname === "/contact-us" ? "underline" : "hover:underline"
+              }
+            >
+              Contact
+            </Link>
+          </div>
+
+          {/* Right: Account + Cart */}
+          <div className="flex items-center gap-4 text-primary-foreground">
+            {!isLoggedIn ? (
+              // 🔓 লগইন না থাকলে - Login/Register link
+              <Link href="/auth/login" className="text-sm hover:underline">
+                Login / Register
+              </Link>
+            ) : (
+              // 🔒 লগইন থাকলে: ড্যাশবোর্ড + ইউজার ইমেজ + নাম + Logout
+              <div className="flex items-center gap-3">
+                <Link
+                  href="/dashboard"
+                  className="group hidden items-center gap-2 text-sm hover:underline sm:inline-flex"
+                >
+                  {/* User Image - Always show image, fallback to avatar icon if image fails */}
+                  <div className="relative">
+                    <Image
+                      src={userImage}
+                      alt={displayName || "User avatar"}
+                      width={28}
+                      height={28}
+                      className="h-7 w-7 rounded-full border-2 border-white/30 object-cover transition-colors group-hover:border-white/60"
+                      priority
+                      onError={(e) => {
+                        // যদি image load না হয়, তাহলে fallback হিসেবে avatar icon show করবে
+                        const target = e.target as HTMLImageElement
+                        target.style.display = "none"
+                      }}
+                    />
+                  </div>
+                  <span
+                    className="max-w-24 truncate"
+                    title={(displayName && displayName) ?? "Account"}
+                  >
+                    {displayName && displayName?.length > 10
+                      ? `${displayName.slice(0, 10)}..`
+                      : (displayName ?? "Account")}
+                  </span>
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  aria-label="Logout"
+                  className="inline-flex items-center gap-1 rounded-md border border-white/30 px-2 py-1 text-sm transition-colors hover:bg-white/10 disabled:opacity-60"
+                >
+                  <LogOut size={16} />
+                  Logout
+                </button>
+              </div>
+            )}
+
+            {/* Cart with count */}
+            <Link
+              href="/dashboard/checkout"
+              className="relative inline-flex rounded-md p-2 transition-colors hover:bg-white/10"
+              aria-label="Cart"
+            >
+              <ShoppingCart size={20} />
+              {cartItemCount > 0 && (
+                <span className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary-foreground px-1 text-xs font-medium text-primary-background">
+                  {cartItemCount > 99 ? "99+" : cartItemCount}
+                </span>
+              )}
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
