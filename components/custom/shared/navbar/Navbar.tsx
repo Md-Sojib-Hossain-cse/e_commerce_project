@@ -288,7 +288,7 @@ export default function Navbar() {
                 )}
               </Link>
               <Link
-                href="/dashboard/checkout"
+                href="/checkout"
                 className="border-neutral relative inline-flex h-10 w-10 items-center justify-center rounded-md border transition-colors delay-0 hover:bg-primary-foreground hover:text-primary-background"
                 aria-label="cart"
               >
@@ -353,7 +353,7 @@ export default function Navbar() {
                 </Link>
 
                 <Link
-                  href="/dashboard/checkout"
+                  href="/checkout"
                   className="relative rounded-lg bg-primary-foreground p-2 text-primary-background transition-colors hover:bg-accent/90"
                   aria-label="Cart"
                 >

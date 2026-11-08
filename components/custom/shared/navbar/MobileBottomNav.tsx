@@ -98,7 +98,7 @@ export default function MobileBottomNav() {
         key: "cart",
         label: "Cart",
         icon: <ShoppingCart size={18} />,
-        href: "/dashboard/checkout",
+        href: "/checkout",
       },
       {
         key: "menu",

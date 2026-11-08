@@ -16,7 +16,7 @@ export default function FloatingEdgeBar() {
         <ul className="flex flex-col items-center justify-center divide-y divide-white/10">
           <li className="relative w-full">
             <Link
-              href="/dashboard/checkout"
+              href="/checkout"
               className="flex w-full flex-col items-center justify-center py-3 text-primary-foreground"
               aria-label="Cart"
               title="Cart"

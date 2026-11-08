@@ -124,7 +124,7 @@ export default function MainMenu() {
 
             {/* Cart with count */}
             <Link
-              href="/dashboard/checkout"
+              href="/checkout"
               className="relative inline-flex rounded-md p-2 transition-colors hover:bg-white/10"
               aria-label="Cart"
             >
