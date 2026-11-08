@@ -46,6 +46,7 @@ const ProductPrimaryInfo = (props: { productInfo: IProduct }) => {
       console.log(window)
       toast.success("URL copied to clipboard!")
     } catch (error) {
+      console.log(error)
       toast.error("Failed to copy URL")
     }
   }
@@ -87,6 +88,29 @@ const ProductPrimaryInfo = (props: { productInfo: IProduct }) => {
                 </div>
               ))
             : null}
+        </div>
+
+        {/* Description */}
+        <div className="mt-2 space-y-3 rounded-md bg-primary-foreground p-2 text-primary-background md:mt-3 md:p-2 lg:mt-4 lg:p-4">
+          <h4 className="text-lg font-semibold md:text-xl lg:text-2xl">
+            Product Description
+          </h4>
+          <p className="md:text-sm">
+            Dressen Premium Cotton T-ShirtPremium Comfort. Everyday
+            Confidence.Not just a t-shirt — a better everyday essential designed
+            for comfort, durability, and style.Why This T-Shirt Is Different•
+            220+ GSM heavyweight fabric• 95% cotton, 5% lycra stretch blend•
+            Breathable single jersey knit• Soft feel with structured fit•
+            Designed for everyday wearEvery Dressen t-shirt goes through careful
+            fabric selection, precise cutting, and quality stitching to ensure
+            long-lasting comfort and durability.Fit &amp; Comfort• Comfortable
+            everyday fit• Natural stretch for better movement• Breathable cotton
+            fabric• Maintains shape after multiple washesQuality Details•
+            Premium stitching quality• Durable fabric construction• Shape
+            retention after wash• Designed for long-term useCare Instructions •
+            Machine wash cold• Wash inside out• Do not bleach• Iron at low
+            temperature
+          </p>
         </div>
       </div>
 
