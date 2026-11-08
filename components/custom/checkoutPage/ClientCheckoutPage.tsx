@@ -19,6 +19,7 @@ import CheckoutCart from "./CheckoutCart"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import CustomerInformation from "./CustomerInformation"
+import PaymentInformation from "./PaymentInformation"
 
 const steps = [
   { title: "Cart" },
@@ -89,7 +90,7 @@ export default function ClientCheckoutPage() {
 
                     {index === 1 && <CustomerInformation />}
 
-                    {index === 2 && <div>Payment Information</div>}
+                    {index === 2 && <PaymentInformation />}
 
                     {index === 3 && <div>Review Your Order</div>}
 
