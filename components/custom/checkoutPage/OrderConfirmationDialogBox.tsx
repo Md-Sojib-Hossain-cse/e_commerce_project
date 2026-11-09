@@ -22,6 +22,7 @@ export function OrderConfirmationDialogBox(props: { step: number }) {
   const dispatch = useAppDispatch()
 
   const handlePlaceOrder = () => {
+    console.log("order placed")
     dispatch(clearCart())
   }
   return (
