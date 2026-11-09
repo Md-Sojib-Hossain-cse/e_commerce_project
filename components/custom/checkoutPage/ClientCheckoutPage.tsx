@@ -13,13 +13,33 @@ import {
 } from "@/components/reui/stepper"
 import { selectCartItems } from "@/redux/features/cart/cartSlice"
 import { useAppSelector } from "@/redux/hook"
-import { CheckIcon, LoaderCircleIcon, MoveRight, MoveLeft } from "lucide-react"
+import {
+  CheckIcon,
+  LoaderCircleIcon,
+  MoveRight,
+  MoveLeft,
+  CircleCheckBig,
+} from "lucide-react"
 import CheckoutOrderSummary from "./CheckoutOrderSummary"
 import CheckoutCart from "./CheckoutCart"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import CustomerInformation from "./CustomerInformation"
 import PaymentInformation from "./PaymentInformation"
+import ReviewCheckoutInformation from "./ReviewCheckoutInformation"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogMedia,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+import { OrderConfirmationDialogBox } from "./OrderConfirmationDialogBox"
 
 const steps = [
   { title: "Cart" },
@@ -85,14 +105,16 @@ export default function ClientCheckoutPage() {
               <StepperContent key={index} value={index + 1}>
                 <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-3">
                   {/* Main Step Content */}
-                  <div className="min-w-0 space-y-6 rounded-md border bg-white p-4 shadow-sm lg:col-span-2 lg:p-6">
+                  <div className="order-2 min-w-0 space-y-6 rounded-md border bg-white p-4 shadow-sm lg:order-1 lg:col-span-2 lg:p-6">
                     {index === 0 && <CheckoutCart cartItems={cartItems} />}
 
                     {index === 1 && <CustomerInformation />}
 
                     {index === 2 && <PaymentInformation />}
 
-                    {index === 3 && <div>Review Your Order</div>}
+                    {index === 3 && (
+                      <ReviewCheckoutInformation setStep={setStep} />
+                    )}
 
                     {/* Navigation Buttons */}
                     <div className="flex items-center justify-between">
@@ -100,21 +122,30 @@ export default function ClientCheckoutPage() {
                         onClick={handleBack}
                         disabled={step === 1}
                         variant="outline"
+                        className="rounded-md py-3 md:py-4 lg:py-5"
                       >
                         <MoveLeft /> Back
                       </Button>
 
                       <Button
                         onClick={handleNext}
-                        disabled={step === steps.length}
+                        disabled={step === steps.length + 1}
+                        className={`${step === 4 ? "hidden" : "rounded-md py-3 md:py-4 lg:py-5"}`}
                       >
-                        Continue <MoveRight />
+                        {step === 1 && "Continue to Shipping"}
+                        {step === 2 && "Continue to Payment"}
+                        {step === 3 && "Review Order"}
+                        <MoveRight />
                       </Button>
+
+                      <OrderConfirmationDialogBox step={step} />
                     </div>
                   </div>
 
                   {/* Order Summary */}
-                  <CheckoutOrderSummary cartItems={cartItems} />
+                  <div className="order-1 lg:order-2">
+                    <CheckoutOrderSummary />
+                  </div>
                 </div>
               </StepperContent>
             ))}

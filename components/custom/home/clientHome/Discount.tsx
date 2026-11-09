@@ -6,6 +6,7 @@ import { type IProduct, type ProductData } from "@/types/product"
 import React from "react"
 import { useAppDispatch } from "@/redux/hook"
 import { addToCart } from "@/redux/features/cart/cartSlice"
+import { toast } from "sonner"
 
 // 🔒 Props: API shape বা UI shape – দুইটাই সাপোর্ট
 type Props = {
@@ -260,7 +261,6 @@ export default function Discount({
   ) => {
     e.stopPropagation()
     e.preventDefault()
-    console.log(it)
     dispatch(
       addToCart({
         productId: it._id,
@@ -270,6 +270,7 @@ export default function Discount({
         unitPrice: 80,
       })
     )
+    toast.success("Product Successfully Added to Cart")
   }
 
   return (

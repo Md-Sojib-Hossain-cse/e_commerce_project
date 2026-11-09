@@ -22,7 +22,7 @@ const PaymentInformation = () => {
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         <div
           onClick={() => setSelected(1)}
-          className={`relative flex items-center gap-3 rounded-md border ${selected === 1 ? "border-destructive-background outline" : "border-primary-background/5"} p-4 transition-colors duration-300 ease-in-out hover:border-destructive-background`}
+          className={`relative flex items-center gap-3 rounded-md border ${selected === 1 ? "border-orange-foreground outline" : "border-primary-background/5"} p-4 transition-colors duration-300 ease-in-out hover:border-orange-foreground`}
         >
           <Truck />
           <div className="space-y-1">
@@ -32,14 +32,14 @@ const PaymentInformation = () => {
             </p>
           </div>
           <CircleCheck
-            className={`absolute top-4 right-4 h-5 w-5 text-destructive-background ${
+            className={`absolute top-4 right-4 h-5 w-5 text-orange-foreground ${
               selected === 1 ? "scale-100 opacity-100" : "scale-75 opacity-0"
             }`}
           />
         </div>
         <div
           onClick={() => setSelected(2)}
-          className={`relative flex items-center gap-3 rounded-md border p-4 transition-colors duration-300 ease-in-out hover:border-destructive-background ${selected === 2 ? "border-destructive-background outline" : "border-primary-background/5"}`}
+          className={`relative flex items-center gap-3 rounded-md border p-4 transition-colors duration-300 ease-in-out hover:border-orange-foreground ${selected === 2 ? "border-orange-foreground outline" : "border-primary-background/5"}`}
         >
           <BangladeshiTaka />
           <div className="space-y-1">
@@ -47,14 +47,14 @@ const PaymentInformation = () => {
             <p className="text-xs text-primary-background/60">Mobile Payment</p>
           </div>
           <CircleCheck
-            className={`absolute top-4 right-4 h-5 w-5 text-destructive-background ${
+            className={`absolute top-4 right-4 h-5 w-5 text-orange-foreground ${
               selected === 2 ? "scale-100 opacity-100" : "scale-75 opacity-0"
             }`}
           />
         </div>
         <div
           onClick={() => setSelected(3)}
-          className={`relative flex items-center gap-3 rounded-md border p-4 transition-colors duration-300 ease-in-out hover:border-destructive-background ${selected === 3 ? "border-destructive-background outline" : "border-primary-background/5"}`}
+          className={`relative flex items-center gap-3 rounded-md border p-4 transition-colors duration-300 ease-in-out hover:border-orange-foreground ${selected === 3 ? "border-orange-foreground outline" : "border-primary-background/5"}`}
         >
           <Smartphone />
           <div className="space-y-1">
@@ -62,7 +62,7 @@ const PaymentInformation = () => {
             <p className="text-xs text-primary-background/60">Mobile Payment</p>
           </div>
           <CircleCheck
-            className={`absolute top-4 right-4 h-5 w-5 text-destructive-background ${
+            className={`absolute top-4 right-4 h-5 w-5 text-orange-foreground ${
               selected === 3 ? "scale-100 opacity-100" : "scale-75 opacity-0"
             }`}
           />

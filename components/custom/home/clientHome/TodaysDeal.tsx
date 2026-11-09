@@ -6,6 +6,7 @@ import { useMemo } from "react"
 import { IProduct } from "@/types/product"
 import { useAppDispatch } from "@/redux/hook"
 import { addToCart } from "@/redux/features/cart/cartSlice"
+import { toast } from "sonner"
 
 type RemoteImage = string | { url?: string } | null | undefined
 
@@ -411,6 +412,7 @@ export default function TodaysDeal({
         unitPrice: it.sale || 80,
       })
     )
+    toast.success("Product Successfully Added to Cart")
   }
 
   return (

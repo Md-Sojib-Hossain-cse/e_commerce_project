@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { useAppDispatch } from "@/redux/hook"
 import { addToCart } from "@/redux/features/cart/cartSlice"
+import { toast } from "sonner"
 
 type FallbackProduct = {
   id: string
@@ -51,6 +52,7 @@ export default function CategoryProductCardsFallback() {
         unitPrice: it.price || 80,
       })
     )
+    toast.success("Product Successfully Added to Cart")
   }
   return (
     <section id="category-product-cards-fallback" className="w-full bg-white">
@@ -62,7 +64,7 @@ export default function CategoryProductCardsFallback() {
               className="group rounded-lg border bg-white p-3 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <div className="flex flex-col items-center p-1">
-                <div className="relative grid aspect-[4/3] w-full max-w-[320px] place-items-center overflow-hidden">
+                <div className="relative grid aspect-4/3 w-full max-w-[320px] place-items-center overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.title}

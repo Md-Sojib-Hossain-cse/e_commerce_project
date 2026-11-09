@@ -20,6 +20,7 @@ import type { IProduct, RemoteCategory } from "@/types/product"
 import { Button } from "@/components/ui/button"
 import { useAppDispatch } from "@/redux/hook"
 import { addToCart } from "@/redux/features/cart/cartSlice"
+import { toast } from "sonner"
 
 /* ---------- safe access helpers (no any) ---------- */
 function isRecord(v: unknown): v is Record<string, unknown> {
@@ -498,7 +499,7 @@ export default function CategoryProductCards() {
     }
   ) => {
     e.stopPropagation()
-    console.log(it)
+    e.preventDefault()
     dispatch(
       addToCart({
         productId: it.id,
@@ -508,6 +509,7 @@ export default function CategoryProductCards() {
         unitPrice: 80,
       })
     )
+    toast.success("Product Successfully Added to Cart")
   }
 
   const router = useRouter()

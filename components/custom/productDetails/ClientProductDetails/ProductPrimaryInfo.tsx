@@ -29,6 +29,7 @@ const ProductPrimaryInfo = (props: { productInfo: IProduct }) => {
         unitPrice: 80,
       })
     )
+    toast.success("Product Successfully Added to Cart")
   }
 
   const handleBuyNow = (e: React.MouseEvent<HTMLButtonElement>) => {

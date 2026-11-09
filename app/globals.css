@@ -25,6 +25,7 @@ body::-webkit-scrollbar {
   --color-success-foreground: #12b76a;
   --color-velvet-foreground: #9912fa;
   --color-destructive-background: #fb2c36;
+  --color-orange-foreground: #ff6900;
 
   --color-destructive: var(--destructive);
   --color-accent: var(--accent);

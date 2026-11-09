@@ -8,6 +8,7 @@ import type { IProduct } from "@/types/product"
 import { Button } from "@/components/ui/button"
 import { useAppDispatch } from "@/redux/hook"
 import { addToCart } from "@/redux/features/cart/cartSlice"
+import { toast } from "sonner"
 
 /** ---------- helpers (type-safe) ---------- */
 const toNum = (v: unknown): number => {
@@ -228,6 +229,7 @@ function TopReviewedImpl({
     it: UIItem
   ) => {
     e.stopPropagation()
+    e.preventDefault()
     dispatch(
       addToCart({
         productId: it.id,
@@ -237,6 +239,7 @@ function TopReviewedImpl({
         unitPrice: it.price || 80,
       })
     )
+    toast.success("Product Successfully Added to Cart")
   }
 
   return (

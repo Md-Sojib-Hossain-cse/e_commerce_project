@@ -6,6 +6,7 @@ import { useAppDispatch } from "@/redux/hook"
 import { IProduct } from "@/types/product"
 import Image from "next/image"
 import Link from "next/link"
+import { toast } from "sonner"
 
 const RelatedProduct = () => {
   const dispatch = useAppDispatch()
@@ -26,6 +27,7 @@ const RelatedProduct = () => {
         unitPrice: p.productInfo.salePrice || p.productInfo.price || 0,
       })
     )
+    toast.success("Product Successfully Added to Cart")
   }
   return (
     <div className="space-y-3 py-4 md:space-y-4 md:py-5 lg:space-y-5 lg:py-6">

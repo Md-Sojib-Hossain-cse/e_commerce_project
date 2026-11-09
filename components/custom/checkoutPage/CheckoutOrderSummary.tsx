@@ -1,13 +1,10 @@
+import { selectCartTotalAmount } from "@/redux/features/cart/cartSlice"
+import { useAppSelector } from "@/redux/hook"
 import { Shield } from "lucide-react"
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-interface CheckoutOrderSummaryProps {
-  cartItems: any[]
-}
+export default function CheckoutOrderSummary() {
+  const totalAmount = useAppSelector(selectCartTotalAmount)
 
-export default function CheckoutOrderSummary({
-  cartItems,
-}: CheckoutOrderSummaryProps) {
   return (
     <aside className="rounded-2xl border bg-white p-5 shadow-sm md:p-8">
       <h2 className="mb-6 text-lg font-semibold">Order Summary</h2>
@@ -15,7 +12,7 @@ export default function CheckoutOrderSummary({
       <div className="space-y-5 border-y py-6">
         <div className="flex justify-between border-b border-primary-background/5 pb-4 text-primary-background/80">
           <span className="text-sm">Subtotal</span>
-          <span className="text-sm">৳ 9,394.00</span>
+          <span className="text-sm">৳ {totalAmount}</span>
         </div>
 
         <div className="flex justify-between text-primary-background/80">
@@ -31,7 +28,7 @@ export default function CheckoutOrderSummary({
 
       <div className="flex justify-between py-6 text-lg">
         <span>Total</span>
-        <span>৳ 9,394.00</span>
+        <span>৳ {totalAmount}</span>
       </div>
 
       <p className="mb-5 flex items-center justify-center gap-1 rounded-md bg-gray-50 p-3 text-center text-sm">
