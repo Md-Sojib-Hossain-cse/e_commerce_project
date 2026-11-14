@@ -70,13 +70,13 @@ export default function ClientHome() {
       _id: "prod_001",
       name: "Premium Cotton T-Shirt",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       shopId: "shop_001",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       brandAndCategories: {
         brand: {
@@ -139,12 +139,12 @@ export default function ClientHome() {
       _id: "prod_002",
       name: "Classic Analog Watch",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       shopId: "shop_001",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       brandAndCategories: {
         brand: "TimeCraft",
@@ -205,12 +205,12 @@ export default function ClientHome() {
       _id: "prod_003",
       name: "Smart Watch Pro",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       shopId: "shop_002",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       brandAndCategories: {
         brand: {
@@ -273,12 +273,12 @@ export default function ClientHome() {
       _id: "prod_004",
       name: "Everyday Sneakers",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       shopId: "shop_001",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       brandAndCategories: {
         brand: {
@@ -341,12 +341,12 @@ export default function ClientHome() {
       _id: "prod_005",
       name: "Casual Slim Fit Pants",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       shopId: "shop_001",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       brandAndCategories: {
         brand: "Urban Style",
@@ -407,12 +407,12 @@ export default function ClientHome() {
       _id: "prod_006",
       name: "Portable Folding Chair",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       shopId: "shop_002",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       brandAndCategories: {
         brand: {
@@ -499,7 +499,7 @@ export default function ClientHome() {
       <section className="mt-4">
         <FeatureMoreBar
           left={{ label: "FEATURED", href: "/featured" }}
-          right={{ label: "More...", href: "/more" }}
+          right={{ label: "More...", href: "/shop" }}
         />
         <Suspense fallback={<CategoryRailFallback />}>
           <CategoryRail />

@@ -61,7 +61,7 @@ const ProductPrimaryInfo = (props: { productInfo: IProduct }) => {
           <Image
             src={
               image ||
-              "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1793876977/productDetailsImg_tqfu8u.jpg"
+              "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg"
             }
             alt="Product image"
             fill

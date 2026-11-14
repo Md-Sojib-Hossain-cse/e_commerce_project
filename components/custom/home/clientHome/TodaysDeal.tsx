@@ -65,7 +65,7 @@ export const FALLBACK: RemoteProduct[] = [
     _id: "5f1",
     name: "Portable Chair",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     mrp: 1800,
     offerPrice: 1500,
   },
@@ -73,7 +73,7 @@ export const FALLBACK: RemoteProduct[] = [
     _id: "6f2",
     name: "Summer T-Shirt",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     mrp: 900,
     offerPrice: 700,
   },
@@ -81,7 +81,7 @@ export const FALLBACK: RemoteProduct[] = [
     _id: "7f3",
     name: "Casual Pants",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     mrp: 1450,
     offerPrice: 1200,
   },
@@ -89,7 +89,7 @@ export const FALLBACK: RemoteProduct[] = [
     _id: "8f4",
     name: "Analog Watch",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     mrp: 2200,
     offerPrice: 1800,
   },
@@ -97,7 +97,7 @@ export const FALLBACK: RemoteProduct[] = [
     _id: "9f5",
     name: "Smart Watch",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     mrp: 2800,
     offerPrice: 2400,
   },
@@ -105,7 +105,7 @@ export const FALLBACK: RemoteProduct[] = [
     _id: "10f6",
     name: "Sneakers",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     mrp: 3200,
     offerPrice: 2700,
   },
@@ -153,7 +153,7 @@ const pickImage = (p: RemoteProduct | IProduct): string => {
     ) {
       return p.gallery[0]
     }
-    return "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg"
+    return "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg"
   }
 
   // For RemoteProduct structure
@@ -189,7 +189,7 @@ const pickImage = (p: RemoteProduct | IProduct): string => {
     ? asStr.startsWith("/") || asStr.startsWith("http")
       ? asStr
       : `/${asStr}`
-    : "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg"
+    : "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg"
 }
 
 // Picks MRP (regular price) from multiple possible fields
@@ -270,11 +270,11 @@ export default function TodaysDeal({
       slug: "portable-chair",
       name: "Portable Folding Chair",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       price: {
         regular: 1800,
@@ -289,11 +289,11 @@ export default function TodaysDeal({
       slug: "summer-t-shirt",
       name: "Men's Summer T-Shirt",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       price: {
         regular: 900,
@@ -308,11 +308,11 @@ export default function TodaysDeal({
       slug: "casual-pants",
       name: "Casual Cotton Pants",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       price: {
         regular: 1450,
@@ -327,11 +327,11 @@ export default function TodaysDeal({
       slug: "analog-watch",
       name: "Classic Analog Watch",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       price: {
         regular: 2200,
@@ -346,11 +346,11 @@ export default function TodaysDeal({
       slug: "smart-watch",
       name: "Bluetooth Smart Watch",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       price: {
         regular: 2800,
@@ -365,11 +365,11 @@ export default function TodaysDeal({
       slug: "casual-sneakers",
       name: "Casual Sneakers",
       featuredImg:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       image:
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       gallery: [
-        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041522/cld-sample-4.jpg",
+        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
       ],
       price: {
         regular: 3200,

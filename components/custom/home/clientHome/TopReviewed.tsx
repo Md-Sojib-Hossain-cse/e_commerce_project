@@ -133,7 +133,7 @@ const STATIC_FALLBACK: UIItem[] = [
     id: "r1",
     title: "Portable Chair",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     price: 1500,
     rating: 4.5,
     reviews: 112,
@@ -143,7 +143,7 @@ const STATIC_FALLBACK: UIItem[] = [
     id: "r2",
     title: "Summer T-Shirt",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     price: 900,
     rating: 4.6,
     reviews: 86,
@@ -153,7 +153,7 @@ const STATIC_FALLBACK: UIItem[] = [
     id: "r3",
     title: "Casual Pants",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     price: 1450,
     rating: 4.4,
     reviews: 73,
@@ -163,7 +163,7 @@ const STATIC_FALLBACK: UIItem[] = [
     id: "r4",
     title: "Analog Watch",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     price: 2200,
     rating: 4.7,
     reviews: 128,
@@ -173,7 +173,7 @@ const STATIC_FALLBACK: UIItem[] = [
     id: "r5",
     title: "Smart Watch",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     price: 2800,
     rating: 4.5,
     reviews: 94,
@@ -183,7 +183,7 @@ const STATIC_FALLBACK: UIItem[] = [
     id: "r6",
     title: "Sneakers",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     price: 3200,
     rating: 4.6,
     reviews: 77,
@@ -313,7 +313,7 @@ function TopReviewedImpl({
                     <Image
                       src={
                         p.image ||
-                        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/dessert-on-a-plate.jpg"
+                        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg"
                       }
                       alt={p.title}
                       fill

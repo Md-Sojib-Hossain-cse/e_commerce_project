@@ -21,7 +21,7 @@ const AboutPageBanner = () => {
               Shop Now
             </Button>
           </Link>
-          <Link href="/contact">
+          <Link href="/contact-us">
             <Button className="bg-primary-white p-2 text-primary-background shadow-sm transition-colors duration-300 hover:bg-primary-foreground/80 md:p-3 lg:p-5">
               Contact Us
             </Button>

@@ -14,7 +14,7 @@ const ReadyToUpgrade = () => {
                     <Link href="/shop">
                     <Button className="p-2 md:p-3 lg:p-5 text-bg-primary-background text-primary-foreground">Shop Now</Button>
                     </Link>
-                    <Link href="/contact">
+                    <Link href="/contact-us">
                     <Button className="p-2 md:p-3 lg:p-5 bg-primary-white transition-colors duration-300 text-primary-background  shadow-sm hover:bg-primary-foreground/80">Contact Us</Button>
                     </Link>
                 </div>

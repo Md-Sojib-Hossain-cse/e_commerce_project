@@ -22,7 +22,7 @@ export const discountDemoData: IProduct[] = [
     _id: "discount-product-1",
     name: "Wireless Bluetooth Headphones",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041519/samples/breakfast.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     shopId: "shop-1",
     featuredImg: "/images/products/headphones.png",
     gallery: ["/images/products/headphones.png"],
@@ -56,7 +56,7 @@ export const discountDemoData: IProduct[] = [
     _id: "discount-product-2",
     name: "Smart Watch Series 8",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041519/samples/breakfast.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     shopId: "shop-1",
     featuredImg: "/images/products/smart-watch.png",
     gallery: ["/images/products/smart-watch.png"],
@@ -88,7 +88,7 @@ export const discountDemoData: IProduct[] = [
     _id: "discount-product-3",
     name: "Portable Bluetooth Speaker",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041519/samples/breakfast.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     shopId: "shop-1",
     featuredImg: "/images/products/speaker.png",
     gallery: ["/images/products/speaker.png"],
@@ -120,7 +120,7 @@ export const discountDemoData: IProduct[] = [
     _id: "discount-product-4",
     name: "USB-C Fast Charger",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041519/samples/breakfast.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     shopId: "shop-1",
     featuredImg: "/images/products/charger.png",
     gallery: ["/images/products/charger.png"],
@@ -152,7 +152,7 @@ export const discountDemoData: IProduct[] = [
     _id: "discount-product-5",
     name: "Gaming Mouse",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041519/samples/breakfast.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     shopId: "shop-1",
     featuredImg: "/images/products/gaming-mouse.png",
     gallery: ["/images/products/gaming-mouse.png"],
@@ -184,7 +184,7 @@ export const discountDemoData: IProduct[] = [
     _id: "discount-product-6",
     name: "Mechanical Keyboard",
     image:
-      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041519/samples/breakfast.jpg",
+      "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg",
     shopId: "shop-1",
     featuredImg: "/images/products/keyboard.png",
     gallery: ["/images/products/keyboard.png"],
@@ -322,7 +322,7 @@ export default function Discount({
                       <Image
                         src={
                           p.image ||
-                          "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041519/samples/breakfast.jpg"
+                          "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg"
                         }
                         alt={p.description.name}
                         fill

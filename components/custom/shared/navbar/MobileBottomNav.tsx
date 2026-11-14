@@ -223,7 +223,7 @@ export default function MobileBottomNav() {
                     Discounts
                   </Link>
                   <Link
-                    href="/more"
+                    href="/shop"
                     className="hover:bg-neutral block rounded p-3"
                     onClick={closeDrawer}
                   >

@@ -91,7 +91,7 @@ const ReviewCheckoutInformation = (props: {
                     <Image
                       src={
                         item.image ||
-                        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041519/samples/breakfast.jpg"
+                        "https://res.cloudinary.com/dsxmcn2mq/image/upload/v1746041521/samples/cup-on-a-table.jpg"
                       }
                       alt={item.name || "product"}
                       fill
